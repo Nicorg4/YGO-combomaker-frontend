@@ -34,7 +34,7 @@ const CreateCombo = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [deckId]);
 
   const goToPage = () => {
     router.push(`/${deckId}`);

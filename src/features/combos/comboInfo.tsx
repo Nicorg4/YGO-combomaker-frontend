@@ -1,5 +1,4 @@
 import { Combo } from '@/types/types'
-import { formatDate } from '@/utils/auxFunctions'
 
 type Props = {
     combo: Combo

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import CardSearchInput from '../cards/cardSearchInput';
-import { Card, ComboForm, Step, StepInput, Tag } from '@/types/types';
+import { Card, ComboForm, StepInput } from '@/types/types';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import TagSelector from '../tags/tagSelector';
 import StartingHandSelector from './startingHandSelector';
@@ -59,7 +59,7 @@ const CreateComboForm = ({ onRequestSubmit }: Props) => {
         ? cardList.find(c => c.id === formData.steps[currentStepIndex - 1].card_id) || null
         : null;
 
-    const handleStepChange = (field: keyof StepInput, value: any) => {
+    const handleStepChange = (field: keyof StepInput, value: string) => {
         setFormData(prev => {
             const steps = [...prev.steps];
             steps[currentStepIndex - 1] = {

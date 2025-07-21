@@ -42,7 +42,7 @@ const DeckCombos = () => {
             setIsLoading(false);
         }
         fetchData();
-    }, [])
+    }, [deckId])
 
     const filteredCombos = combos.filter(combo =>
         combo.title.toLowerCase().includes(searchQuery.toLowerCase())

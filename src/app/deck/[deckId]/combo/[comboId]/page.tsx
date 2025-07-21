@@ -52,7 +52,7 @@ const StepByStepCombo = () => {
             }
         }
         fetchData();
-    }, [])
+    }, [comboId, deckId])
 
     if (isLoading) {
         <LoadingAnimation />

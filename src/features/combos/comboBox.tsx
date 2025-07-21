@@ -66,11 +66,11 @@ const ComboBox = (props: Props) => {
                 <div className='flex items-center space-x-4'>
                     <p className='text-slate-700 text-lg' >Starting hand: </p>
                     {props.combo.starting_hand.map((card, index) => (
-                        <div className='relative group'>
+                        <div className='relative group' key={index}>
                             <span className='absolute left-1/2 -translate-x-1/2 z-100 text-center bg-slate-700/90 text-[10px] p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap'>
                                 {card.card_name}
                             </span>
-                            <Image src={getImageFromApi(card.card_id)} alt={card.card_name} width={30} height={30} key={index} />
+                            <Image src={getImageFromApi(card.card_id)} alt={card.card_name} width={30} height={30}/>
                         </div>
                     ))}
                 </div>
