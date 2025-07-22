@@ -78,10 +78,10 @@ export default function App() {
         <p className="text-xl">Select your favourite deck, explore <strong className="text-amber-300">combos</strong> or create a new one.</p>
       </div>
       <MainWrapper>
-        <div className="flex flex-col justify-between flex-1">
+        <div className="flex flex-col justify-between items-center flex-1">
           {decks.length === 0 ? (
-            <div className="flex flex-col justify-center items-center">
-              <p className="text-2xl">No decks found :{'('}</p>
+            <div className="flex flex-col justify-center items-center flex-1">
+              <p className="text-xl text-white/50">No decks found :{'('}</p>
             </div>
           ) : (
             <div className="flex flex-col">
@@ -94,7 +94,9 @@ export default function App() {
               </div>
             </div>
           )}
-          <PaginationController currentPage={currentPage - 1} totalPages={totalPages - 1} goBack={goBack} goNext={goNext} />
+          {totalPages > 1 && (
+            <PaginationController currentPage={currentPage} totalPages={totalPages} goBack={goBack} goNext={goNext} />
+          )}
         </div>
       </MainWrapper>
     </MainContainer>

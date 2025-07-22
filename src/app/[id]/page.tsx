@@ -75,10 +75,10 @@ const DeckCombos = () => {
                         </button>
                     </div>
                 </div>
-                <div className='flex flex-col justify-between flex-1 max-h-[520px] overflow-auto custom-scrollbar '>
-                    <div className='flex flex-col gap-3 items-center mb-5'>
+                <div className='flex flex-col justify-between flex-1 max-h-[510px] overflow-auto custom-scrollbar '>
+                    <div className='flex flex-col gap-3 items-center mb-5 flex-1'>
                         {filteredCombos.length <= 0 ? (
-                            <p className='m-auto text-xl'>No combos found.</p>
+                            <p className='m-auto text-xl text-white/50'>No combos found.</p>
                         ) : (
                             <>
                                 {filteredCombos.map((combo) => (
