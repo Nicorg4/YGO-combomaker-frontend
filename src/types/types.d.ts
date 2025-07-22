@@ -3,6 +3,7 @@ export type Deck = {
   name: string;
   description: string;
   image_url: string;
+  combos_count: number;
 };
 
 export type Card = {

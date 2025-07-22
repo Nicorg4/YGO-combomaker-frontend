@@ -59,14 +59,24 @@ const DeckCombos = () => {
             <GoBackButton goToPage={() => goToPage('/')} />
             {deck && <DeckFullInfo deck={deck} />}
             <MainWrapper>
-                <input
-                    type='text'
-                    placeholder='Search for a combo.. '
-                    className='w-[95%] p-3 pl-7 mb-2 bg-white/80 text-slate-800 clip-diagonal m-auto'
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                <div className='flex flex-col justify-between flex-1'>
-                    <div className='flex flex-1 flex-col gap-3 overflow-y-auto max-h-[400px] items-center custom-scrollbar'>
+                <div className='flex gap-3 w-[95%] m-auto'>
+                    <input
+                        type='text'
+                        placeholder='Search for a combo.. '
+                        className='w-full p-3 pl-7 mb-2 bg-white/80 text-slate-800 clip-diagonal m-auto'
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                    <div className='flex justify-end items-right'>
+                        <button
+                            className='flex align-middle justify-center items-center text-xl text-slate-800 font-bold cursor-pointer pr-2 bg-white/70 clip-diagonal h-12 w-30 hover:bg-white/90 transition-all duration-300 ease-in-out'
+                            onClick={() => goToPage(`/deck/${deckId}/create`)}
+                        >
+                            <GoPlus className='text-3xl'/> Create
+                        </button>
+                    </div>
+                </div>
+                <div className='flex flex-col justify-between flex-1 max-h-[520px] overflow-auto custom-scrollbar '>
+                    <div className='flex flex-col gap-3 items-center mb-5'>
                         {filteredCombos.length <= 0 ? (
                             <p className='m-auto text-xl'>No combos found.</p>
                         ) : (
@@ -77,14 +87,6 @@ const DeckCombos = () => {
                                 ))}
                             </>
                         )}
-                    </div>
-                    <div className='w-full flex justify-end items-right'>
-                        <button
-                            className='flex align-middle justify-center items-center gap-2 text-slate-800 text-4xl font-bold cursor-pointer bg-white/70 clip-diagonal h-16 w-16 hover:bg-white/90 transition-all duration-300 ease-in-out'
-                            onClick={() => goToPage(`/deck/${deckId}/create`)}
-                        >
-                            <GoPlus />
-                        </button>
                     </div>
                 </div>
             </MainWrapper >

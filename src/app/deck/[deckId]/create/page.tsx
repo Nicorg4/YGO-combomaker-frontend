@@ -7,7 +7,10 @@ import MainContainer from '@/components/mainContainer'
 import MainWrapper from '@/components/mainWrapper'
 import CreateComboForm from '@/features/combos/createComboForm'
 import SubmitComboPopUp from '@/features/combos/submitComboPopUp'
+import { createCombo } from '@/features/combos/useCombos'
 import { getDeckById } from '@/features/decks/useDecks'
+import { createStep } from '@/features/steps/useSteps'
+import { createTag } from '@/features/tags/useTags'
 import { BottomLefNotificationProps, ComboForm, Deck } from '@/types/types'
 import { useParams, useRouter } from 'next/navigation'
 import React, { useCallback, useEffect, useState } from 'react'
@@ -61,7 +64,7 @@ const CreateCombo = () => {
 
   const handleSubmitCombo = async () => {
     setIsSubmitting(true);
-    if (!formData || !deckId) {
+    if (!formData || !deckId || typeof deckId !== 'string') {
       setNotification({
         ...notification,
         message: 'Error creating combo',
@@ -77,28 +80,9 @@ const CreateCombo = () => {
         title: formData.title,
         difficulty: formData.difficulty,
       };
-
-      const comboRes = await fetch(`${URL_SERVER}/combos/deck/${deckId}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(comboData),
-      });
-
-      if (!comboRes.ok) throw new Error('Error creating combo');
-
-      const combo = await comboRes.json();
+      const combo = await createCombo(deckId, comboData);
       const comboId = combo.id;
-
-      const tagsRes = await Promise.all(
-        formData.tags.map(tag =>
-          fetch(`${URL_SERVER}/comboTags`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ combo_id: comboId, tag_id: tag.id }),
-          })
-        )
-      );
-      if (tagsRes.some(res => !res.ok)) throw new Error('Error creating combo tags');
+      await Promise.all(formData.tags.map(tag => createTag(comboId, tag.id)));
 
       const response = await fetch(`${URL_SERVER}/comboStartingHand`, {
         method: 'POST',
@@ -114,21 +98,11 @@ const CreateCombo = () => {
       });
       if (!finalBoardRes.ok) throw new Error('Error creating final board');
 
-      const stepsRes = await Promise.all(
+      await Promise.all(
         formData.steps.map(step =>
-          fetch(`${URL_SERVER}/steps/combo/${comboId}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              card_id: step.card_id,
-              action_text: step.action_text,
-              step_order: step.step_order,
-              target_card_ids: step.target_cards.map(c => c.id),
-            }),
-          })
+          createStep(comboId, step.card_id, step.action_text, step.step_order, step.target_cards.map(c => c.id),)
         )
       );
-      if (stepsRes.some(res => !res.ok)) throw new Error('Error creating steps');
       setNotification({
         ...notification,
         message: 'Combo created successfully',

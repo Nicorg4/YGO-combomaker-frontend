@@ -29,7 +29,7 @@ const DeckBox = (props: Props) => {
         className='object-cover object-center'
         priority
       />
-
+      <span className='absolute z-500 right-0 top-0 px-1 bg-black/80 text-sm'>{props.deck.combos_count}</span>
       {showName && (
         <div className='absolute top-0 left-0 w-full h-full bg-black/70 flex items-center justify-center'>
           <p className='text-center text-xl text-white'>{props.deck.name}</p>

@@ -57,9 +57,8 @@ const ComboBox = (props: Props) => {
                 </div>
             </div>
             <div
-                className={`flex flex-col transition-all ease-in-out overflow-hidden px-5 ${props.isExpanded ? 'max-h-[500px] opacity-100 duration-700 pb-5' : 'max-h-0 opacity-0 duration-200'} `}
+                className={`flex flex-col transition-all ease-in-out px-5 ${props.isExpanded ? 'max-h-[500px] opacity-100 duration-700 pb-5' : 'max-h-0 opacity-0 duration-200'} `}
             >
-
                 <div className='flex justify-between gap-2'>
                     <div className='flex items-center space-x-4'>
                         {DifficultyBars(props.combo.difficulty === 'Easy' ? 1 : props.combo.difficulty === 'Medium' ? 2 : 3)}
