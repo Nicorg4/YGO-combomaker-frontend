@@ -8,6 +8,7 @@ export type Deck = {
 export type Card = {
   id: number;
   name: string;
+  target_card_id: number;
 };
 
 export type Combo = {
@@ -15,6 +16,10 @@ export type Combo = {
   deck_id: number;
   author: string;
   title: string;
+  final_board: {
+    card_id: number;
+    card_name: string;
+  }[]
   starting_hand: {
     card_id: number;
     card_name: string;
@@ -42,15 +47,24 @@ export type Tag = {
 };
 
 export type ComboForm = {
-    title: string;
-    author: string;
-    difficulty: string;
-    startingHand: Card[]
-    tags: Tag[];
-    steps: {
-        action_text: string;
-        target_cards: Card[];
-        card_id: number;
-        step_order: number;
-    }[];
+  title: string;
+  author: string;
+  difficulty: string;
+  startingHand: Card[]
+  final_board: Card[];
+  tags: Tag[];
+  steps: {
+    action_text: string;
+    target_cards: Card[];
+    card_id: number;
+    step_order: number;
+  }[];
 };
+
+export type BottomLefNotificationProps = {
+  message: string;
+  duration: number;
+  show: boolean;
+  type: 'success' | 'error' | 'info';
+  onClose: () => void;
+}

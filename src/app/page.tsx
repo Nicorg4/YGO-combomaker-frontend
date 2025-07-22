@@ -3,17 +3,24 @@
 import LoadingAnimation from "@/components/loadingAnimation";
 import MainContainer from "@/components/mainContainer";
 import MainWrapper from "@/components/mainWrapper";
+import PaginationController from "@/components/paginationController";
 import DeckBox from "@/features/decks/deckBox";
 import { getAllDecks } from "@/features/decks/useDecks";
 import { Deck } from "@/types/types";
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export default function App() {
   const [decks, setDecks] = useState<Deck[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 768);
-  const ITEMS_PER_PAGE = windowWidth >= 768 ? 15 : (windowWidth >= 640 ? 8 : 4);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  const ITEMS_PER_PAGE = useMemo(() => {
+    if (windowWidth >= 768) return 15;
+    if (windowWidth >= 640) return 8;
+    return 4;
+  }, [windowWidth]);
   const router = useRouter();
 
   const goToPage = (id: number) => {
@@ -29,6 +36,11 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    setTotalPages(Math.ceil(decks.length / ITEMS_PER_PAGE));
+    setCurrentPage(1);
+  }, [decks, ITEMS_PER_PAGE]);
+
+  useEffect(() => {
     const fetchDecks = async () => {
       try {
         const fetchedDecksInfo = await getAllDecks();
@@ -42,6 +54,18 @@ export default function App() {
     fetchDecks();
   }, []);
 
+  const goNext = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(prev => prev + 1);
+    }
+  };
+
+  const goBack = () => {
+    if (currentPage > 1) {
+      setCurrentPage(prev => prev - 1);
+    }
+  };
+
   if (isLoading) {
     return <LoadingAnimation />
   }
@@ -53,20 +77,25 @@ export default function App() {
         <p className="text-xl">Select your favourite deck, explore <strong className="text-amber-300">combos</strong> or create a new one.</p>
       </div>
       <MainWrapper>
-        {decks.length === 0 ? (
-          <div className="flex flex-col justify-center items-center">
-            <p className="text-2xl">No decks found :{'('}</p>
+        <div className="flex flex-col justify-between flex-1">
+          {decks.length === 0 ? (
+            <div className="flex flex-col justify-center items-center">
+              <p className="text-2xl">No decks found :{'('}</p>
 
-          </div>
-        ) : (
-          <div className="flex flex-col">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-              {decks.slice(0, ITEMS_PER_PAGE).map((deck) => (
-                <DeckBox key={deck.id} deck={deck} onClick={() => goToPage(deck.id)} />
-              ))}
             </div>
-          </div>
-        )}
+          ) : (
+            <div className="flex flex-col">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+                {decks
+                  .slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
+                  .map((deck) => (
+                    <DeckBox key={deck.id} deck={deck} onClick={() => goToPage(deck.id)} />
+                  ))}
+              </div>
+            </div>
+          )}
+          <PaginationController currentPage={currentPage - 1} totalPages={totalPages - 1} goBack={goBack} goNext={goNext} />
+        </div>
       </MainWrapper>
     </MainContainer>
   );

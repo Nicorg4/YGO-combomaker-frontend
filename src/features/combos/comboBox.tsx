@@ -57,28 +57,46 @@ const ComboBox = (props: Props) => {
                 </div>
             </div>
             <div
-                className={`flex justify-between transition-all ease-in-out overflow-hidden px-5 ${props.isExpanded ? 'max-h-[500px] opacity-100 duration-700 pb-5' : 'max-h-0 opacity-0 duration-200'} `}
+                className={`flex flex-col transition-all ease-in-out overflow-hidden px-5 ${props.isExpanded ? 'max-h-[500px] opacity-100 duration-700 pb-5' : 'max-h-0 opacity-0 duration-200'} `}
             >
-                <div className='flex items-center space-x-4'>
-                    {DifficultyBars(props.combo.difficulty === 'Easy' ? 1 : props.combo.difficulty === 'Medium' ? 2 : 3)}
-                    <p className='text-slate-700 text-lg' >{props.combo.difficulty}</p>
+
+                <div className='flex justify-between gap-2'>
+                    <div className='flex items-center space-x-4'>
+                        {DifficultyBars(props.combo.difficulty === 'Easy' ? 1 : props.combo.difficulty === 'Medium' ? 2 : 3)}
+                        <p className='text-slate-700 text-lg' >{props.combo.difficulty}</p>
+                    </div>
+
+                    <div className='flex flex-col justify-center items-end'>
+                        <p className='text-slate-700'>
+                            <span className='text-slate-800 font-bold'>{props.combo.author}</span>
+                        </p>
+                        <p className='text-sm text-slate-500 mt-1'>{formatDate(props.combo.created_at)}</p>
+                    </div>
                 </div>
-                <div className='flex items-center space-x-4'>
-                    <p className='text-slate-700 text-lg' >Starting hand: </p>
-                    {props.combo.starting_hand.map((card, index) => (
-                        <div className='relative group' key={index}>
-                            <span className='absolute left-1/2 -translate-x-1/2 z-100 text-center bg-slate-700/90 text-[10px] p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap'>
-                                {card.card_name}
-                            </span>
-                            <Image src={getImageFromApi(card.card_id)} alt={card.card_name} width={30} height={30}/>
-                        </div>
-                    ))}
-                </div>
-                <div className='flex flex-col justify-center items-end'>
-                    <p className='text-slate-700'>
-                        <span className='text-slate-800 font-bold'>{props.combo.author}</span>
-                    </p>
-                    <p className='text-sm text-slate-500 mt-1'>{formatDate(props.combo.created_at)}</p>
+                <div className='flex flex-col justify-center gap-2 mt-3'>
+                    <div className='flex items-center space-x-4'>
+                        <p className='text-slate-700 text-md w-[100px]'>Starting hand:</p>
+                        {props.combo.starting_hand.map((card, index) => (
+                            <div className='relative group' key={index}>
+                                <span className='absolute left-1/2 -translate-x-1/2 z-100 text-center bg-slate-700/90 text-[10px] p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap'>
+                                    {card.card_name}
+                                </span>
+                                <Image src={getImageFromApi(card.card_id)} alt={card.card_name} width={30} height={30} />
+                            </div>
+                        ))}
+
+                    </div>
+                    <div className='flex items-center space-x-4'>
+                        <p className='text-slate-700 text-md w-[100px]' >Final board:</p>
+                        {props.combo.final_board.map((card, index) => (
+                            <div className='relative group' key={index}>
+                                <span className='absolute left-1/2 -translate-x-1/2 z-100 text-center bg-slate-700/90 text-[10px] p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap'>
+                                    {card.card_name}
+                                </span>
+                                <Image src={getImageFromApi(card.card_id)} alt={card.card_name} width={30} height={30} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

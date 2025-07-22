@@ -2,16 +2,17 @@
 
 import React, { useEffect, useState } from 'react';
 import CardSearchInput from '../cards/cardSearchInput';
-import { Card, ComboForm, StepInput } from '@/types/types';
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { BottomLefNotificationProps, Card, ComboForm, StepInput } from '@/types/types';
 import TagSelector from '../tags/tagSelector';
-import StartingHandSelector from './startingHandSelector';
+import PaginationController from '@/components/paginationController';
+import CardSelector from './startingHandSelector';
 
 type Props = {
     onRequestSubmit: (data: ComboForm) => void;
+    setNotification: React.Dispatch<React.SetStateAction<Omit<BottomLefNotificationProps, 'onClose'>>>;
 };
 
-const CreateComboForm = ({ onRequestSubmit }: Props) => {
+const CreateComboForm = ({ onRequestSubmit, setNotification }: Props) => {
     const [currentStepIndex, setCurrentStepIndex] = useState(0);
     const [cardList, setCardList] = useState<Card[]>([]);
     const [formData, setFormData] = useState<ComboForm>({
@@ -19,6 +20,7 @@ const CreateComboForm = ({ onRequestSubmit }: Props) => {
         author: '',
         difficulty: '',
         startingHand: [],
+        final_board: [],
         tags: [],
         steps: [
             {
@@ -148,6 +150,13 @@ const CreateComboForm = ({ onRequestSubmit }: Props) => {
             step => step.card_id === 0 || step.action_text.trim() === ''
         );
         if (hasIncompleteStep) {
+            setNotification(prev => ({
+                ...prev,
+                message: 'Combo is not complete. Please fill in all fields.',
+                type: "error",
+                show: true,
+                duration: 5000,
+            }));
             return;
         }
         onRequestSubmit(formData);
@@ -192,11 +201,18 @@ const CreateComboForm = ({ onRequestSubmit }: Props) => {
                         setSelectedTags={(tags) => setFormData(prev => ({ ...prev, tags }))}
                     />
                     <span className='pl-2 w-full text-left mt-3'>Starting hand (max 6)</span>
-                    <StartingHandSelector
+                    <CardSelector
                         cardList={cardList}
                         startingHand={formData.startingHand || []}
-                        setStartingHand={(cards) => setFormData(prev => ({ ...prev, startingHand: cards }))}
+                        setCards={(cards) => setFormData(prev => ({ ...prev, startingHand: cards }))}
                         maxCards={6}
+                    />
+                    <span className='pl-2 w-full text-left mt-3'>End board</span>
+                    <CardSelector
+                        cardList={cardList}
+                        startingHand={formData.final_board || []}
+                        setCards={(cards) => setFormData(prev => ({ ...prev, final_board: cards }))}
+                        maxCards={20}
                     />
                 </div>
             )}
@@ -218,10 +234,10 @@ const CreateComboForm = ({ onRequestSubmit }: Props) => {
                         onChange={(e) => handleStepChange('action_text', e.target.value)}
                     />
                     <span className='pl-2 w-full text-left mt-3'>Targets</span>
-                    <StartingHandSelector
+                    <CardSelector
                         cardList={cardList}
                         startingHand={formData.steps[currentStepIndex - 1]?.target_cards || []}
-                        setStartingHand={(cards) => setFormData(prev => {
+                        setCards={(cards) => setFormData(prev => {
                             const updatedSteps = [...prev.steps];
                             updatedSteps[currentStepIndex - 1] = {
                                 ...updatedSteps[currentStepIndex - 1],
@@ -255,28 +271,11 @@ const CreateComboForm = ({ onRequestSubmit }: Props) => {
                                 Create
                             </button>
                         </div >
-            )}
-        </div>
-    )
-}
-
-<div className='flex flex-col gap-2 items-center justify-center'>
-    <div className='flex gap-2 items-center justify-center'>
-        <button
-            className={`flex p-2 bg-white/80 text-slate-700 opacity-30 clip-diagonal-small ${currentStepIndex > 0 && 'opacity-100 cursor-pointer hover:bg-white'}`}
-            disabled={currentStepIndex === 0}
-            onClick={goBack}>
-            <FaArrowLeft />
-        </button>
-        <p className='text-lg text-white/80'>{currentStepIndex + 1} / {formData.steps.length + 1}</p>
-        <button
-            className={`flex p-2 bg-white/80 text-slate-700 opacity-30 clip-diagonal-small ${currentStepIndex < formData.steps.length && 'opacity-100 cursor-pointer hover:bg-white'}`}
-            onClick={goNext}
-        >
-            <FaArrowRight />
-        </button>
-    </div>
-</div>
+                    )}
+                </div>
+            )
+            }
+            <PaginationController currentPage={currentStepIndex} totalPages={formData.steps.length} goBack={goBack} goNext={goNext} />
         </div >
     );
 };

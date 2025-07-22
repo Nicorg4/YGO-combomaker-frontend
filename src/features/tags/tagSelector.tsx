@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
+import { getAllTags } from './useTags';
 
 type Tag = {
     id: number;
@@ -17,8 +18,7 @@ const TagSelector = ({ selectedTags, setSelectedTags }: Props) => {
 
     useEffect(() => {
         const fetchTags = async () => {
-            const res = await fetch('/tags.json');
-            const data = await res.json();
+            const data = await getAllTags();
             setAllTags(data);
         };
         fetchTags();
@@ -61,7 +61,7 @@ const TagSelector = ({ selectedTags, setSelectedTags }: Props) => {
                 {selectedTags.map(tag => (
                     <span
                         key={tag.id}
-                        className="px-2 py-1 bg-blue-200 text-blue-800 rounded cursor-pointer"
+                        className="px-2 py-1 bg-blue-200 text-blue-800 cursor-pointer clip-diagonal-small"
                         onClick={() => removeTag(tag.id)}
                     >
                         {tag.name} ×

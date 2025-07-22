@@ -7,20 +7,23 @@ import CardSearchInput from '../cards/cardSearchInput';
 type Props = {
   cardList: Card[];
   startingHand: Card[];
-  setStartingHand: (cards: Card[]) => void;
+  setCards: (cards: Card[]) => void;
   maxCards: number;
 };
 
-const StartingHandSelector = ({ cardList, startingHand, setStartingHand, maxCards }: Props) => {
+const CardSelector = ({ cardList, startingHand, setCards, maxCards }: Props) => {
   const addCard = (card: Card) => {
     if (startingHand.length >= maxCards) return;
-    if (!startingHand.some(c => c.id === card.id)) {
-      setStartingHand([...startingHand, card]);
-    }
+
+    const count = startingHand.filter(c => c.id === card.id).length;
+    if (count >= 3) return;
+
+    setCards([...startingHand, card]);
   };
 
-  const removeCard = (id: number) => {
-    setStartingHand(startingHand.filter(c => c.id !== id));
+
+  const removeCard = (indexToRemove: number) => {
+    setCards(startingHand.filter((_, index) => index !== indexToRemove));
   };
 
   return (
@@ -32,19 +35,19 @@ const StartingHandSelector = ({ cardList, startingHand, setStartingHand, maxCard
       />
 
       <div className="flex flex-wrap gap-2 mt-2">
-        {startingHand.map(card => (
+        {startingHand.map((card, index) => (
           <div
-            key={card.id}
-            className="bg-green-200 text-green-800 px-2 py-1 rounded cursor-pointer"
-            onClick={() => removeCard(card.id)}
+            key={`${card.id}-${index}`}
+            className="bg-green-200 text-green-800 px-2 py-1 cursor-pointer clip-diagonal-small"
+            onClick={() => removeCard(index)}
           >
             {card.name} x
-            {/* <Image src={getImageFromApi(card.id)} alt={card.name} width={50} height={50} /> */}
           </div>
         ))}
+
       </div>
     </div>
   );
 };
 
-export default StartingHandSelector;
+export default CardSelector;

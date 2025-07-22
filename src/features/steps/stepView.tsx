@@ -12,7 +12,7 @@ type Props = {
 
 const StepView = (props: Props) => {
     return (
-        <div className='flex flex-col gap-3 items-center flex-1 justify-center'>
+        <div className='flex flex-col gap-3 items-center flex-1 justify-center mb-5'>
             <Image src={getImageFromApi(props.step.card_id)} alt={props.step.action_text} width={120} height={120} className='border-2 border-white/50' />
             <div className='bg-white/80 p-1 pl-5 pr-5 clip-diagonal-small text-slate-700 flex items-center gap-2'>
                 <GiStarSwirl className='text-xl' />
@@ -27,7 +27,7 @@ const StepView = (props: Props) => {
                     </div>
                     <div className='flex flex-row gap-3'>
                         {props.step.step_targets.map((target) => (
-                            <Image key={target.id} src={getImageFromApi(props.step.card_id)} alt={target.id.toString()} width={120} height={120} className='border-2 border-white/50' />
+                            <Image key={target.id} src={getImageFromApi(target.target_card_id)} alt={target.id.toString()} width={120} height={120} className='border-2 border-white/50' />
                         ))}
                     </div>
                 </div>
