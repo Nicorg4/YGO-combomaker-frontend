@@ -74,8 +74,8 @@ export default function App() {
   return (
     <MainContainer>
       <div className="flex flex-col bg-slate-900 p-10 min-w-full align-middle clip-diagonal gap-3 slide-in-from-top">
-        <h1 className="text-4xl">Yu-Gi-Oh! Combo Maker</h1>
-        <p className="text-xl">Select your favourite deck, explore <strong className="text-amber-300">combos</strong> or create a new one.</p>
+        <h1 className="text-xl md:text-4xl">Yu-Gi-Oh! Combo Maker</h1>
+        <p className="text-sm md:text-xl">Select your favourite deck, explore <strong className="text-amber-300">combos</strong> or create a new one.</p>
       </div>
       <MainWrapper>
         <div className="flex flex-col justify-between items-center flex-1">
@@ -95,7 +95,7 @@ export default function App() {
             </div>
           )}
           {totalPages > 1 && (
-            <PaginationController currentPage={currentPage} totalPages={totalPages} goBack={goBack} goNext={goNext} />
+            <PaginationController currentPage={currentPage - 1} totalPages={totalPages - 1} goBack={goBack} goNext={goNext} />
           )}
         </div>
       </MainWrapper>
