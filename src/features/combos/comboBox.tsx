@@ -47,7 +47,7 @@ const ComboBox = (props: Props) => {
                         <IoEnterOutline />
                     </button>
                     <Image src={getImageFromApi(props.combo.starting_hand[0].card_id)} alt={props.combo.starting_hand[0].card_name} width={30} height={30} />
-                    <h2 className='text-slate-800 text-lg font-bold w-[150px] whitespace-nowrap overflow-hidden overflow-ellipsis'>{props.combo.title}</h2>
+                    <h2 className='text-slate-800 text-md font-bold w-[150px] whitespace-nowrap overflow-hidden overflow-ellipsis'>{props.combo.title}</h2>
                 </div>
                 <div className='gap-2 items-center hidden md:flex min-w-[200px]'>
                     {props.combo.tags.map((tag) => (
