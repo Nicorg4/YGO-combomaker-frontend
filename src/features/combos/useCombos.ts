@@ -18,3 +18,12 @@ export const createCombo = async (deckId: string, comboData: { author: string, t
         body: JSON.stringify(comboData),
     });
 }
+
+export const deleteComboById = async (comboId: number): Promise<number> => {
+    return await fetchFromAPI<number>(`/combos/${comboId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+}

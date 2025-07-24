@@ -21,6 +21,7 @@ const StepByStepCombo = () => {
     const [combo, setCombo] = useState<Combo>();
     const [steps, setSteps] = useState<Step[]>([]);
     const [currentStepIndex, setCurrentStepIndex] = useState(0);
+    const [cooldown, setCooldown] = useState(false);
 
     const goToPage = () => {
         router.push(`/${deckId}`);
@@ -34,6 +35,19 @@ const StepByStepCombo = () => {
     const goToPrevStep = () => {
         if (currentStepIndex === 0) return;
         setCurrentStepIndex(currentStepIndex - 1);
+    };
+
+    const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
+        if (cooldown) return;
+
+        if (event.deltaY > 0) {
+            goToNextStep();
+        } else if (event.deltaY < 0) {
+            goToPrevStep();
+        }
+
+        setCooldown(true);
+        setTimeout(() => setCooldown(false), 500);
     };
 
     useEffect(() => {
@@ -63,7 +77,10 @@ const StepByStepCombo = () => {
             <GoBackButton goToPage={() => goToPage()} />
             <MainWrapper>
                 {combo && <ComboInfo combo={combo} />}
-                <div className='flex flex-col items-center border-2 border-white/50 flex-1 p-5'>
+                <div
+                    className='flex flex-col items-center border-2 border-white/50 flex-1 p-5'
+                    onWheel={handleWheel}
+                >
                     {steps.length > 0 && steps[currentStepIndex] && (
                         <StepView step={steps[currentStepIndex]} />
                     )}

@@ -16,6 +16,8 @@ export default function App() {
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 768);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
+  const [searchQuery, setSearchQuery] = useState('')
+
   const ITEMS_PER_PAGE = useMemo(() => {
     if (windowWidth >= 768) return 15;
     if (windowWidth >= 640) return 8;
@@ -67,6 +69,8 @@ export default function App() {
     }
   };
 
+  const filteredDecks = decks.filter(deck => (deck.name).toLowerCase().includes(searchQuery.toLowerCase()))
+
   if (isLoading) {
     return <LoadingAnimation />
   }
@@ -78,6 +82,12 @@ export default function App() {
         <p className="text-sm md:text-xl">Select your favourite deck, explore <strong className="text-amber-300">combos</strong> or create a new one.</p>
       </div>
       <MainWrapper>
+        <input
+          type='text'
+          placeholder='Search for a deck.. '
+          className='w-full p-3 pl-7 mb-2 bg-white/80 text-slate-800 clip-diagonal m-auto max-w-[90%]'
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
         <div className="flex flex-col justify-between items-center flex-1">
           {decks.length === 0 ? (
             <div className="flex flex-col justify-center items-center flex-1">
@@ -86,7 +96,7 @@ export default function App() {
           ) : (
             <div className="flex flex-col">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-                {decks
+                {filteredDecks
                   .slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
                   .map((deck) => (
                     <DeckBox key={deck.id} deck={deck} onClick={() => goToPage(deck.id)} />

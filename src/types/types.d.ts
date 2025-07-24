@@ -25,7 +25,7 @@ export type Combo = {
     card_id: number;
     card_name: string;
   }[]
-  difficulty?: 'Easy' | 'Medium' | 'Hard';
+  difficulty: 'Easy' | 'Medium' | 'Hard';
   created_at: string;
   tags: Tag[];
 };

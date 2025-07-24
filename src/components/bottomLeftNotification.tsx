@@ -46,7 +46,7 @@ const BottomLeftNotification = ({ message, duration, type, show, onClose }: Bott
                 <Progress
                     value={progress}
                     className="w-full h-2"
-                    color={type === 'error' ? 'bg-red-500' : type === 'success' ? 'bg-green-500' : 'bg-blue-500'}
+                    color={type === 'error' ? 'bg-red-400' : type === 'success' ? 'bg-green-300' : 'bg-blue-400'}
                 />
             </div>
             <button

@@ -6,7 +6,7 @@ type Props = {
 
 const MainWrapper = ({ children }: Props) => {
     return (
-        <div className="flex flex-col flex-1 bg-slate-900 p-10 min-w-full align-middle clip-diagonal gap-3 slide-in-from-top">
+        <div className="flex flex-col flex-1 bg-slate-900 p-10 min-w-full clip-diagonal slide-in-from-top gap-2">
             {children}
         </div>
     )

@@ -103,6 +103,7 @@ const CreateCombo = () => {
           createStep(comboId, step.card_id, step.action_text, step.step_order, step.target_cards.map(c => c.id),)
         )
       );
+      setIsLoading(true);
       setNotification({
         ...notification,
         message: 'Combo created successfully',
@@ -129,7 +130,12 @@ const CreateCombo = () => {
   };
 
   if (isLoading) {
-    return <LoadingAnimation />;
+    return (
+      <>
+        <LoadingAnimation />
+        <BottomLeftNotification message={notification.message} duration={notification.duration} show={notification.show} type={notification.type} onClose={handleCloseNotification} />
+      </>
+    );
   }
 
   return (
@@ -141,6 +147,8 @@ const CreateCombo = () => {
             onCancel={() => setShowSubmitPopUp(false)}
             onConfirm={handleSubmitCombo}
             isSubmitting={isSubmitting}
+            title={'Confirm submission'}
+            action={'submit'}
           />
         )}
         <BottomLeftNotification message={notification.message} duration={notification.duration} show={notification.show} type={notification.type} onClose={handleCloseNotification} />
