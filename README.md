@@ -1,4 +1,4 @@
-# Yu-Gi-Oh! Combo Viewer - Frontend
+# Yu-Gi-Oh! Combo Maker - Frontend
 
 This is the frontend application for the **Yu-Gi-Oh! Combo Viewer**, a web platform where users can explore, create, and share card combos from different Yu-Gi-Oh! decks.
 
