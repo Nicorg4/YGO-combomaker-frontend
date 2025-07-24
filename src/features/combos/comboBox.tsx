@@ -49,7 +49,7 @@ const ComboBox = (props: Props) => {
                     <Image src={getImageFromApi(props.combo.starting_hand[0].card_id)} alt={props.combo.starting_hand[0].card_name} width={30} height={30} />
                     <h2 className='text-slate-800 text-lg font-bold w-[150px] whitespace-nowrap overflow-hidden overflow-ellipsis'>{props.combo.title}</h2>
                 </div>
-                <div className='gap-2 items-center hidden md:flex w-[200px]'>
+                <div className='gap-2 items-center hidden md:flex min-w-[200px]'>
                     {props.combo.tags.map((tag) => (
                         <span key={tag.id} className='text-sm bg-slate-700 text-white p-2 text-center pointer-events-none clip-diagonal-small font-bold'>{tag.name}</span>
                     ))}
