@@ -204,10 +204,16 @@ const DeckCombos = () => {
                             />
                             <div className='flex justify-end items-right'>
                                 <button
-                                    className='flex align-middle justify-center items-center text-xl text-slate-800 font-bold cursor-pointer pr-2 bg-white/70 clip-diagonal h-12 w-30 hover:bg-white/90 transition-all duration-300 ease-in-out'
+                                    className='hidden sm:flex align-middle justify-center items-center text-xl text-slate-800 font-bold cursor-pointer pr-2 bg-white/70 clip-diagonal-small h-12 w-30 hover:bg-white/90 transition-all duration-300 ease-in-out'
                                     onClick={() => goToPage(`/deck/${deckId}/create`)}
                                 >
                                     <GoPlus className='text-3xl' /> Create
+                                </button>
+                                <button
+                                    className='flex sm:hidden align-middle justify-center items-center text-xl text-slate-800 font-bold cursor-pointer bg-white/70 clip-diagonal-small h-12 w-10 hover:bg-white/90 transition-all duration-300 ease-in-out'
+                                    onClick={() => goToPage(`/deck/${deckId}/create`)}
+                                >
+                                    <GoPlus className='text-xl' />
                                 </button>
                             </div>
                         </div>

@@ -18,9 +18,9 @@ type Props = {
 
 const FilteringControls = ({ sortBy, setSortBy, toggleSortOrder, expandAll, collapseAll, selectedDifficulties, setSelectedDifficulties, tags, selectedTags, setSelectedTags }: Props) => {
     return (
-        <div className='w-full hidden md:flex justify-between'>
+        <div className='w-full hidden sm:flex justify-between'>
             <div className="flex gap-2 items-center">
-                <label className="text-white">Sort:</label>
+                <label className="text-white hidden lg:flex">Sort:</label>
                 <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value)}
@@ -41,7 +41,7 @@ const FilteringControls = ({ sortBy, setSortBy, toggleSortOrder, expandAll, coll
                 </button>
             </div>
             <div className="flex gap-2 items-center">
-                <label className="text-white">Filters:</label>
+                <label className="text-white hidden lg:flex">Filters:</label>
                 <MultiSelectFilter
                     selected={selectedDifficulties}
                     setSelected={setSelectedDifficulties}
@@ -57,7 +57,7 @@ const FilteringControls = ({ sortBy, setSortBy, toggleSortOrder, expandAll, coll
                 />
             </div>
             <div className="flex gap-1 items-center">
-                <label className="text-white">Toggle:</label>
+                <label className="text-white hidden lg:flex">Toggle:</label>
                 <button
                     className='flex align-middle justify-center items-center text-xl text-slate-800 font-bold cursor-pointer bg-white/70 clip-diagonal-small p-2 hover:bg-white/90 transition-all duration-300 ease-in-out'
                     onClick={() => expandAll()}
