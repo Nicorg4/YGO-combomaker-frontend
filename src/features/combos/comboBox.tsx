@@ -161,7 +161,7 @@ const ComboBox = (props: Props) => {
           }}
           className={` ${
             props.isExpanded ? "flex" : "hidden"
-          } absolute bottom-5 right-18 p-3 bg-slate-400 clip-diagonal-small cursor-pointer text-xl hover:bg-slate-300 transition-all ease-in-out duration-200`}
+          } absolute bottom-5 right-18 p-3 bg-slate-700 clip-diagonal-small cursor-pointer text-xl hover:bg-slate-500 transition-all ease-in-out duration-200`}
         >
           <MdOutlineEdit />
         </button>

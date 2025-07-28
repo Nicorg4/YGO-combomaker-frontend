@@ -214,7 +214,7 @@ const CreateComboForm = ({
       {isFirstStep && (
         <div className="flex flex-col flex-1 items-center w-[90%] m-auto">
           <h2 className="text-xl font-bold">Insert new combo data:</h2>
-          <span className="pl-2 w-full text-left mt-3">Title</span>
+          <span className="pl-2 w-full text-left mt-1">Title</span>
           <input
             className="w-full p-2 bg-white/80 text-slate-700 clip-diagonal-small"
             name="title"
@@ -222,7 +222,7 @@ const CreateComboForm = ({
             value={formData.title}
             onChange={handleComboChange}
           />
-          <span className="pl-2 w-full text-left mt-3">Author</span>
+          <span className="pl-2 w-full text-left mt-1">Author</span>
           <input
             className="w-full p-2 bg-white/80 text-slate-700 clip-diagonal-small"
             name="author"
@@ -230,7 +230,7 @@ const CreateComboForm = ({
             value={formData.author}
             onChange={handleComboChange}
           />
-          <span className="pl-2 w-full text-left mt-3">Difficulty</span>
+          <span className="pl-2 w-full text-left mt-1">Difficulty</span>
           <select
             className="w-full p-2 bg-white/80 text-slate-700 clip-diagonal-small"
             name="difficulty"
@@ -242,14 +242,14 @@ const CreateComboForm = ({
             <option value="Medium">Medium</option>
             <option value="Hard">Hard</option>
           </select>
-          <span className="pl-2 w-full text-left mt-3">Tags (max 3)</span>
+          <span className="pl-2 w-full text-left mt-1">Tags (max 3)</span>
           <TagSelector
             selectedTags={formData.tags}
             setSelectedTags={(tags) =>
               setFormData((prev) => ({ ...prev, tags }))
             }
           />
-          <span className="pl-2 w-full text-left mt-3">
+          <span className="pl-2 w-full text-left mt-1">
             Starting hand (max 6)
           </span>
           <CardSelector
@@ -260,7 +260,7 @@ const CreateComboForm = ({
             }
             maxCards={6}
           />
-          <span className="pl-2 w-full text-left mt-3">End board</span>
+          <span className="pl-2 w-full text-left mt-1">End board</span>
           <CardSelector
             cardList={cardList}
             cards={formData.final_board || []}
@@ -326,7 +326,7 @@ const CreateComboForm = ({
               className="flex align-middle justify-center items-center text-xl gap-1 text-slate-800 font-bold cursor-pointer bg-white/70 clip-diagonal-small py-1 px-5 hover:bg-white/90 transition-all duration-300 ease-in-out"
               onClick={handleClickCreate}
             >
-              {combo && steps ? 'Update' : 'Create'} combo <IoCreateOutline />
+              {combo && steps ? "Update" : "Create"} combo <IoCreateOutline />
             </button>
           )}
         </div>
