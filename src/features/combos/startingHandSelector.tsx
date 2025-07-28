@@ -6,24 +6,24 @@ import CardSearchInput from '../cards/cardSearchInput';
 
 type Props = {
   cardList: Card[];
-  startingHand: Card[];
+  cards: Card[];
   setCards: (cards: Card[]) => void;
   maxCards: number;
 };
 
-const CardSelector = ({ cardList, startingHand, setCards, maxCards }: Props) => {
+const CardSelector = ({ cardList, cards, setCards, maxCards }: Props) => {
   const addCard = (card: Card) => {
-    if (startingHand.length >= maxCards) return;
+    if (cards.length >= maxCards) return;
 
-    const count = startingHand.filter(c => c.id === card.id).length;
+    const count = cards.filter(c => c.card_id === card.card_id).length;
     if (count >= 3) return;
 
-    setCards([...startingHand, card]);
+    setCards([...cards, card]);
   };
 
 
   const removeCard = (indexToRemove: number) => {
-    setCards(startingHand.filter((_, index) => index !== indexToRemove));
+    setCards(cards.filter((_, index) => index !== indexToRemove));
   };
 
   return (
@@ -35,13 +35,13 @@ const CardSelector = ({ cardList, startingHand, setCards, maxCards }: Props) => 
       />
 
       <div className="flex flex-wrap gap-2 mt-2">
-        {startingHand.map((card, index) => (
+        {cards.map((card, index) => (
           <div
-            key={`${card.id}-${index}`}
+            key={`${card.card_id}-${index}`}
             className="bg-green-200 text-green-800 px-2 py-1 cursor-pointer clip-diagonal-small"
             onClick={() => removeCard(index)}
           >
-            {card.name} x
+            {card.card_name} x
           </div>
         ))}
 

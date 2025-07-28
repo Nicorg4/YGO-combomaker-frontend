@@ -26,8 +26,8 @@ const StepView = (props: Props) => {
                         <span className='font-bold text-xl '>Targets</span>
                     </div>
                     <div className='flex flex-row gap-3'>
-                        {props.step.step_targets.map((target) => (
-                            <Image key={target.id} src={getImageFromApi(target.target_card_id)} alt={target.id.toString()} width={120} height={120} className='border-2 border-white/50' />
+                        {props.step.step_targets.map((target, index) => (
+                            <Image key={`${target.card_id}-${index}}`} src={getImageFromApi(target.card_id)} alt={target.card_id.toString()} width={120} height={120} className='border-2 border-white/50' />
                         ))}
                     </div>
                 </div>

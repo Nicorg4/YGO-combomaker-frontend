@@ -23,7 +23,7 @@ const CardSearchInput = ({ cardList, selectedCard, setSelectedCard }: Props) => 
         }
 
         const results = cardList
-            .filter(card => card.name.toLowerCase().includes(inputValue.toLowerCase()))
+            .filter(card => card.card_name.toLowerCase().includes(inputValue.toLowerCase()))
             .slice(0, 5);
 
         setFilteredCards(results);
@@ -46,7 +46,7 @@ const CardSearchInput = ({ cardList, selectedCard, setSelectedCard }: Props) => 
 
     const handleSelect = (card: Card) => {
         setSelectedCard(card);
-        setInputValue(card.name);
+        setInputValue('');
         setShowSuggestions(false);
         setHighlightedIndex(0);
     };
@@ -84,7 +84,7 @@ const CardSearchInput = ({ cardList, selectedCard, setSelectedCard }: Props) => 
                     setInputValue(value);
                     setShowSuggestions(true);
 
-                    const match = cardList.find(card => card.name === value);
+                    const match = cardList.find(card => card.card_name === value);
                     setSelectedCard(match || null);
                 }}
                 onKeyDown={handleKeyDown}
@@ -97,13 +97,13 @@ const CardSearchInput = ({ cardList, selectedCard, setSelectedCard }: Props) => 
                     {filteredCards.length > 0 ? (
                         filteredCards.map((card, index) => (
                             <div
-                                key={card.id}
+                                key={card.card_id}
                                 onClick={() => handleSelect(card)}
                                 className={`p-2 cursor-pointer text-slate-800 ${
                                     index === highlightedIndex ? 'bg-slate-700 text-white' : 'hover:bg-slate-100'
                                 }`}
                             >
-                                {card.name}
+                                {card.card_name}
                             </div>
                         ))
                     ) : (

@@ -7,20 +7,30 @@ import MainContainer from "@/components/mainContainer";
 import MainWrapper from "@/components/mainWrapper";
 import CreateComboForm from "@/features/combos/createComboForm";
 import SubmitComboPopUp from "@/features/combos/submitComboPopUp";
-import { createFullCombo } from "@/features/combos/useCombos";
+import { getComboById, updateFullCombo } from "@/features/combos/useCombos";
 import { getDeckById } from "@/features/decks/useDecks";
-import { BottomLefNotificationProps, ComboForm, Deck } from "@/types/types";
+import { getStepsByComboId } from "@/features/steps/useSteps";
+import {
+  BottomLefNotificationProps,
+  Combo,
+  ComboForm,
+  Deck,
+  Step,
+} from "@/types/types";
 import { useParams, useRouter } from "next/navigation";
 import React, { useCallback, useEffect, useState } from "react";
 
-const CreateCombo = () => {
+const UpdateCombo = () => {
   const router = useRouter();
   const deckId = useParams().deckId;
+  const comboId = useParams().comboId;
   const [isLoading, setIsLoading] = useState(true);
   const [deck, setDeck] = useState<Deck>();
   const [showSubmitPopUp, setShowSubmitPopUp] = useState(false);
   const [formData, setFormData] = useState<ComboForm | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [combo, setCombo] = useState<Combo>();
+  const [steps, setSteps] = useState<Step[]>([]);
   const [notification, setNotification] = useState<
     Omit<BottomLefNotificationProps, "onClose">
   >({
@@ -37,9 +47,13 @@ const CreateCombo = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        if (typeof deckId === "string") {
+        if (typeof deckId === "string" && typeof comboId === "string") {
           const deck = await getDeckById(deckId);
+          const fetchedCombo = await getComboById(comboId);
+          const fetchedSteps = await getStepsByComboId(comboId);
           setDeck(deck);
+          setCombo(fetchedCombo);
+          setSteps(fetchedSteps);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -48,7 +62,7 @@ const CreateCombo = () => {
       }
     };
     fetchData();
-  }, [deckId]);
+  }, [comboId, deckId]);
 
   const goToPage = () => {
     router.push(`/${deckId}`);
@@ -59,7 +73,7 @@ const CreateCombo = () => {
     setShowSubmitPopUp(true);
   };
 
-  const handleSubmitCombo = async () => {
+  const handleUpdateCombo = async () => {
     setIsSubmitting(true);
     if (!formData || !deckId || typeof deckId !== "string") {
       setNotification({
@@ -97,11 +111,11 @@ const CreateCombo = () => {
         })),
       };
 
-      await createFullCombo(data);
+      await updateFullCombo(Number(comboId), data);
       setIsLoading(true);
       setNotification({
         ...notification,
-        message: "Combo created successfully",
+        message: "Combo updated successfully",
         type: "success",
         show: true,
         duration: 3000,
@@ -113,7 +127,7 @@ const CreateCombo = () => {
       console.error("Error creating combo:", error);
       setNotification({
         ...notification,
-        message: "Error creating combo",
+        message: "Error updating combo",
         type: "error",
         show: true,
         duration: 5000,
@@ -145,10 +159,10 @@ const CreateCombo = () => {
         {showSubmitPopUp && (
           <SubmitComboPopUp
             onCancel={() => setShowSubmitPopUp(false)}
-            onConfirm={handleSubmitCombo}
+            onConfirm={handleUpdateCombo}
             isSubmitting={isSubmitting}
-            title={"Confirm submission"}
-            action={"submit"}
+            title={"Confirm modifications"}
+            action={"update"}
           />
         )}
         <BottomLeftNotification
@@ -162,13 +176,15 @@ const CreateCombo = () => {
         <MainWrapper>
           <div className="flex flex-col gap-2 p-4 bg-white/80 text-slate-800 clip-diagonal">
             <h1 className="text-2xl font-bold text-center">
-              Create combo for {deck?.name} deck
+              Update combo for {deck?.name} deck
             </h1>
           </div>
           <div className="flex flex-col items-center border-2 border-white/50 flex-1 p-5">
             <CreateComboForm
               onRequestSubmit={handleSubmitRequest}
               setNotification={setNotification}
+              combo={combo}
+              steps={steps}
             />
           </div>
         </MainWrapper>
@@ -177,4 +193,4 @@ const CreateCombo = () => {
   );
 };
 
-export default CreateCombo;
+export default UpdateCombo;
