@@ -149,6 +149,7 @@ const CreateCombo = () => {
             isSubmitting={isSubmitting}
             title={"Confirm submission"}
             action={"submit"}
+            steps={formData ? formData.steps : []}
           />
         )}
         <BottomLeftNotification

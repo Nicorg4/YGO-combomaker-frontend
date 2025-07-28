@@ -163,6 +163,7 @@ const UpdateCombo = () => {
             isSubmitting={isSubmitting}
             title={"Confirm modifications"}
             action={"update"}
+            steps={formData ? formData.steps : []}
           />
         )}
         <BottomLeftNotification
