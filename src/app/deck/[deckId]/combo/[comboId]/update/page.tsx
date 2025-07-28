@@ -65,7 +65,7 @@ const UpdateCombo = () => {
   }, [comboId, deckId]);
 
   const goToPage = () => {
-    router.push(`/${deckId}`);
+    router.push(`/deck/${deckId}`);
   };
 
   const handleSubmitRequest = (data: ComboForm) => {

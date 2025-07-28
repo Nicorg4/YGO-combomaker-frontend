@@ -22,7 +22,7 @@ import SubmitComboPopUp from "@/features/combos/submitComboPopUp";
 import BottomLeftNotification from "@/components/bottomLeftNotification";
 
 const DeckCombos = () => {
-  const deckId = useParams().id;
+  const deckId = useParams().deckId;
   const [combos, setCombos] = useState<Combo[]>([]);
   const [deck, setDeck] = useState<Deck>();
   const [isLoading, setIsLoading] = useState(true);

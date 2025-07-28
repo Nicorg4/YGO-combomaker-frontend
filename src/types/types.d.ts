@@ -59,3 +59,25 @@ export type BottomLefNotificationProps = {
   type: "success" | "error" | "info";
   onClose: () => void;
 };
+
+export type DeckInfo = {
+  key_cards: KeyCard[];
+  main_dangers: MainDanger[];
+  note: string;
+};
+
+export type KeyCard = {
+  card_id: number;
+  card_name: string;
+  description: string;
+};
+
+export type MainDanger = {
+  card_id: number;
+  card_name: string;
+  extra_notes: string;
+  responses: {
+    card_id: number;
+    card_name: string;
+  }[];
+};

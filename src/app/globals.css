@@ -100,3 +100,23 @@ body {
 .animate-spin {
   animation: spin 1s linear infinite;
 }
+
+.custom-scrollbar-alt {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(29, 41, 61) transparent;
+}
+
+.custom-scrollbar-alt::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar-alt::-webkit-scrollbar-thumb {
+  background-color: rgb(29, 41, 61);
+  border-radius: 8px;
+  border: 1px solid rgb(29, 41, 61);
+}
+
+.custom-scrollbar-alt::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(29, 41, 61);
+}
