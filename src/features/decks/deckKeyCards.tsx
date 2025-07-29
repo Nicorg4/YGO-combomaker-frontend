@@ -17,7 +17,7 @@ const DeckKeyCards = ({ keyCards }: Props) => {
           {keyCards.map((card) => (
             <div
               key={card.card_id}
-              className="mb-2 flex items-center space-x-4"
+              className="mb-2 flex items-center justify-center space-x-4"
             >
               <CardImage card={card} w={43} />
               <div className="bg-slate-800 clip-diagonal-small p-1 px-2 text-white">

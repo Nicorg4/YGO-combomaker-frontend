@@ -18,9 +18,9 @@ const DeckMainDangers = ({ mainDangers }: Props) => {
           mainDangers.map((card) => (
             <div
               key={card.card_id}
-              className="flex flex-col mb-2 gap-1 justify-center w-full"
+              className="flex flex-col mb-3 gap-1 justify-center w-full"
             >
-              <div className="flex mb-2 items-center space-x-4 text-slate-800 m-auto">
+              <div className="flex items-center space-x-4 text-slate-800">
                 <CardImage card={card} w={43} />
                 <FaArrowRight />
                 <div className="flex flex-1">
