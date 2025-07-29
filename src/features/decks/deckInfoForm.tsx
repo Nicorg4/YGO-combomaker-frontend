@@ -163,7 +163,7 @@ export default function DeckInfoForm({
               onChange={(e) =>
                 handleKeyCardChange(card.card_id, "description", e.target.value)
               }
-              className="w-full pl-5 p-2 bg-white clip-diagonal-small text-slate-800"
+              className="w-full pl-5 p-2 bg-white clip-diagonal-small text-slate-800 mb-2"
             />
             <div className="flex justify-center">
               <MainButton
