@@ -20,6 +20,7 @@ import FilteringControls from "@/components/filteringControls";
 import { getAllTags } from "@/features/tags/useTags";
 import SubmitComboPopUp from "@/features/combos/submitComboPopUp";
 import BottomLeftNotification from "@/components/bottomLeftNotification";
+import MainButton from "@/components/mainButton";
 
 const DeckCombos = () => {
   const deckId = useParams().deckId;
@@ -220,19 +221,9 @@ const DeckCombos = () => {
                 className="w-full p-3 pl-7 mb-2 bg-white/70 text-slate-800 clip-diagonal m-auto"
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <div className="flex justify-end items-right">
-                <button
-                  className="hidden sm:flex align-middle justify-center items-center text-xl text-slate-800 font-bold cursor-pointer pr-2 bg-white/70 clip-diagonal-small h-12 w-30 hover:bg-white/90 transition-all duration-300 ease-in-out"
-                  onClick={() => goToPage(`/deck/${deckId}/create`)}
-                >
-                  <GoPlus className="text-3xl" /> Create
-                </button>
-                <button
-                  className="flex sm:hidden align-middle justify-center items-center text-xl text-slate-800 font-bold cursor-pointer bg-white/70 clip-diagonal-small h-12 w-10 hover:bg-white/90 transition-all duration-300 ease-in-out"
-                  onClick={() => goToPage(`/deck/${deckId}/create`)}
-                >
-                  <GoPlus className="text-xl" />
-                </button>
+              <div className="flex items-right">
+                <MainButton onClick={() => goToPage(`/deck/${deckId}/create`)} text={"Create"} type={"confirm"}><GoPlus className="text-3xl" /></MainButton>
+                <MainButton onClick={() => goToPage(`/deck/${deckId}/create`)} text={""} type={"confirm"} responsive={true}><GoPlus className="text-3xl" /></MainButton>
               </div>
             </div>
             <FilteringControls

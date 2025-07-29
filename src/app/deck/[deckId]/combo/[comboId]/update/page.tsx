@@ -121,7 +121,7 @@ const UpdateCombo = () => {
         duration: 3000,
       });
       setTimeout(() => {
-        router.push(`/${deckId}`);
+        router.push(`/deck/${deckId}`);
       }, 3000);
     } catch (error) {
       console.error("Error creating combo:", error);

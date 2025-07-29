@@ -15,6 +15,7 @@ import PaginationController from "@/components/paginationController";
 import CardSelector from "./startingHandSelector";
 import { IoTrashOutline, IoCreateOutline } from "react-icons/io5";
 import { GoPlus } from "react-icons/go";
+import MainButton from "@/components/mainButton";
 
 type Props = {
   onRequestSubmit: (data: ComboForm) => void;
@@ -307,27 +308,26 @@ const CreateComboForm = ({
 
           <div className="flex flex-col gap-2 mt-5 md:flex-row mb-3">
             {currentStepIndex > 1 && (
-              <button
-                className="flex align-middle justify-center items-center text-xl gap-1 text-white font-bold cursor-pointer bg-red-400 clip-diagonal-small py-1 px-5 hover:bg-white/90 transition-all duration-300 ease-in-out"
+              <MainButton
                 onClick={() => deleteStep(currentStepIndex - 1)}
+                text={"Remove step"}
+                type={"delete"}
               >
-                Remove step <IoTrashOutline />
-              </button>
+                <IoTrashOutline />
+              </MainButton>
             )}
-            <button
-              className="flex align-middle justify-center items-center text-xl gap-1 text-slate-800 font-bold cursor-pointer bg-white/70 clip-diagonal-small py-1 px-5 hover:bg-white/90 transition-all duration-300 ease-in-out"
-              onClick={addStep}
-            >
-              Add step <GoPlus />
-            </button>
+            <MainButton onClick={addStep} text={"Add step"} type={"confirm"}>
+              <GoPlus />
+            </MainButton>
           </div>
           {isLastStep && (
-            <button
-              className="flex align-middle justify-center items-center text-xl gap-1 text-slate-800 font-bold cursor-pointer bg-white/70 clip-diagonal-small py-1 px-5 hover:bg-white/90 transition-all duration-300 ease-in-out"
+            <MainButton
               onClick={handleClickCreate}
+              text={combo && steps ? "Update combo" : "Create combo"}
+              type={"confirm"}
             >
-              {combo && steps ? "Update" : "Create"} combo <IoCreateOutline />
-            </button>
+              <IoCreateOutline />
+            </MainButton>
           )}
         </div>
       )}

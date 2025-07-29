@@ -1,7 +1,6 @@
 import { KeyCard } from "@/types/types";
 import React from "react";
-import { getImageFromApi } from "../images/useImages";
-import Image from "next/image";
+import CardImage from "@/components/cardImage";
 
 type Props = {
   keyCards: KeyCard[];
@@ -14,19 +13,16 @@ const DeckKeyCards = ({ keyCards }: Props) => {
         Key Cards
       </h2>
       {keyCards.length > 0 ? (
-        <div className="grid grid-cols-2 gap-2 h-[170px] overflow-auto custom-scrollbar-alt px-5">
+        <div className="grid grid-cols-2 gap-2 h-[150px] overflow-auto custom-scrollbar-alt px-10">
           {keyCards.map((card) => (
             <div
               key={card.card_id}
               className="mb-2 flex items-center space-x-4"
             >
-              <Image
-                src={getImageFromApi(card.card_id)}
-                alt={card.card_name}
-                width={50}
-                height={50}
-              />
-              <p className="text-slate-800">{card.description}</p>
+              <CardImage card={card} w={43} />
+              <div className="bg-slate-800 clip-diagonal-small p-1 px-2 text-white">
+                <p className="text-sm">{card.description}</p>
+              </div>
             </div>
           ))}
         </div>

@@ -30,6 +30,7 @@ const DeckInfo = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [name, setName] = useState('');
 
   const [notification, setNotification] = useState<
     Omit<BottomLefNotificationProps, "onClose">
@@ -56,6 +57,8 @@ const DeckInfo = () => {
           setKeyCards(deckInfo.key_cards);
           setMainDangers(deckInfo.main_dangers);
           setNotes(deckInfo.note);
+          setName(deckInfo.name);
+          console.log("Deck Info:", deckInfo);
         }
       } catch (error) {
         console.error("Error fetching deck info:", error);
@@ -139,7 +142,9 @@ const DeckInfo = () => {
       <MainWrapper>
         {!isEditing ? (
           <div className="flex flex-col space-y-3 flex-1">
-
+            <h1 className="text-2xl font-bold text-white">
+              {name} deck info
+            </h1>
             {Object.entries(components).map(([key, component]) => (
               <div
                 key={key}

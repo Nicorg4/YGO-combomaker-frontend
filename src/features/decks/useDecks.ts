@@ -25,11 +25,13 @@ export const getDeckInfo = async (
   key_cards: KeyCard[];
   main_dangers: MainDanger[];
   note: string;
+  name: string;
 }> => {
   return await fetchFromAPI<{
     key_cards: KeyCard[];
     main_dangers: MainDanger[];
     note: string;
+    name: string;
   }>(`/decks/info/${deckId}`);
 };
 
