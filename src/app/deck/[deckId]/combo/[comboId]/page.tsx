@@ -22,7 +22,7 @@ const StepByStepCombo = () => {
   const [steps, setSteps] = useState<Step[]>([]);
 
   const goToPage = () => {
-    router.push(`/${deckId}`);
+    router.push(`/deck/${deckId}`);
   };
 
   

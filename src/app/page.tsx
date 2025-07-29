@@ -26,7 +26,7 @@ export default function App() {
   const router = useRouter();
 
   const goToPage = (id: number) => {
-    router.push(`/${id}`);
+    router.push(`/deck/${id}`);
   };
 
   useEffect(() => {

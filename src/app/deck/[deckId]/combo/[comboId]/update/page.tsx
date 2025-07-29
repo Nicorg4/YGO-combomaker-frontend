@@ -65,7 +65,7 @@ const UpdateCombo = () => {
   }, [comboId, deckId]);
 
   const goToPage = () => {
-    router.push(`/${deckId}`);
+    router.push(`/deck/${deckId}`);
   };
 
   const handleSubmitRequest = (data: ComboForm) => {
@@ -121,7 +121,7 @@ const UpdateCombo = () => {
         duration: 3000,
       });
       setTimeout(() => {
-        router.push(`/${deckId}`);
+        router.push(`/deck/${deckId}`);
       }, 3000);
     } catch (error) {
       console.error("Error creating combo:", error);

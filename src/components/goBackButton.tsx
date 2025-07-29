@@ -1,5 +1,6 @@
 import React from 'react'
 import { IoIosArrowBack } from "react-icons/io";
+import MainButton from './mainButton';
 
 type Props = {
     goToPage: () => void
@@ -7,13 +8,8 @@ type Props = {
 
 const GoBackButton = (props: Props) => {
     return (
-        <div className='absolute top-3 left-3 z-500'>
-            <button
-                className='flex justify-between items-center gap-1 text-lg hover:cursor-pointer bg-white/70 p-1 pl-4 pr-5 clip-diagonal-small text-slate-800 font-bold hover:bg-white/90 transition-all duration-300 ease-in-out'
-                onClick={() => props.goToPage()}
-            >
-                <IoIosArrowBack className='text-xl'/> Go back
-            </button>
+        <div className='fixed top-3 left-3 z-500'>
+            <MainButton onClick={props.goToPage} text={"Go back"} type={"confirm"} reverse={true}><IoIosArrowBack className='text-xl'/></MainButton>
         </div>
     )
 }
