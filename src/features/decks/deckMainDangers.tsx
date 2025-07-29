@@ -1,5 +1,7 @@
+"use client";
+
 import { MainDanger } from "@/types/types";
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import CardImage from "@/components/cardImage";
 
@@ -8,34 +10,50 @@ type Props = {
 };
 
 const DeckMainDangers = ({ mainDangers }: Props) => {
+  const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col relative">
       <h2 className="text-xl font-bold mb-4 text-center text-slate-800">
         Main dangers
       </h2>
       <div className="h-[150px] overflow-auto custom-scrollbar-alt px-10">
         {mainDangers.length > 0 ? (
-          mainDangers.map((card) => (
+          mainDangers.map((card, index) => (
             <div
-              key={card.card_id}
-              className="flex flex-col mb-3 gap-1 justify-center w-full"
+              key={index}
+              className="flex flex-col mb-3 gap-1 justify-center w-full "
             >
+              {hoveredCardIndex === index && (
+                <div
+                  className={
+                    "bg-slate-800 clip-diagonal-small p-2 left-[100px] text-white absolute z-50 pointer-events-none"
+                  }
+                >
+                  <div className="bg-slate-800 clip-diagonal-small p-1 px-2 text-white">
+                    <p className="text-lg text-left">{card.card_name}</p>
+                    <p className="text-sm text-left">- {card.extra_notes}</p>
+                  </div>
+                </div>
+              )}
               <div className="flex items-center space-x-4 text-slate-800">
-                <CardImage card={card} w={43} />
+                <div
+                  onMouseEnter={() => setHoveredCardIndex(index)}
+                  onMouseLeave={() => setHoveredCardIndex(null)}
+                  className="cursor-help"
+                >
+                  <CardImage card={card} w={43} noHover={true} />
+                </div>
                 <FaArrowRight />
                 <div className="flex flex-1">
-                  {card.responses.map((response) => (
+                  {card.responses.map((response, index) => (
                     <div
-                      key={response.card_id}
+                      key={index}
                       className="flex items-center space-x-2 mr-2"
                     >
                       <CardImage card={response} w={30} />
                     </div>
                   ))}
                 </div>
-              </div>
-              <div className="bg-slate-800 clip-diagonal-small p-1 px-2 text-white">
-                <p className="text-sm">{card.extra_notes}</p>
               </div>
             </div>
           ))

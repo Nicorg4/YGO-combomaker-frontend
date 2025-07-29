@@ -1,28 +1,47 @@
+"use client";
+
 import { KeyCard } from "@/types/types";
-import React from "react";
+import React, { useState } from "react";
 import CardImage from "@/components/cardImage";
+import clsx from "clsx";
 
 type Props = {
   keyCards: KeyCard[];
 };
 
 const DeckKeyCards = ({ keyCards }: Props) => {
+  const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
   return (
     <div className="flex flex-col">
       <h2 className="text-xl font-bold mb-4 text-center text-slate-800">
         Key Cards
       </h2>
       {keyCards.length > 0 ? (
-        <div className="grid grid-cols-2 gap-2 h-[150px] overflow-auto custom-scrollbar-alt px-10">
-          {keyCards.map((card) => (
+        <div className="grid grid-cols-6 lg:grid-cols-8 gap-1 max-h-[150px] overflow-auto custom-scrollbar-alt px-10">
+          {keyCards.map((card, index) => (
             <div
-              key={card.card_id}
-              className="mb-2 flex items-center justify-center space-x-4"
+              key={index}
+              className="mb-2 flex justify-center relative cursor-help"
+              onMouseEnter={() => setHoveredCardIndex(index)}
+              onMouseLeave={() => setHoveredCardIndex(null)}
             >
-              <CardImage card={card} w={43} />
-              <div className="bg-slate-800 clip-diagonal-small p-1 px-2 text-white">
-                <p className="text-sm">{card.description}</p>
-              </div>
+              {hoveredCardIndex === index && (
+                <div
+                  className={clsx(
+                    "bg-slate-800 clip-diagonal-small p-2 text-white absolute z-50 text-center whitespace-nowrap pointer-events-none",
+                    {
+                      "lg:left-[100%] lg:right-auto": index % 8 < 4,
+                      "lg:right-[100%] lg:left-auto": index % 8 >= 4,
+                      "left-[100%] right-auto": index % 6 < 4,
+                      "right-[100%] left-auto": index % 6 >= 4,
+                    }
+                  )}
+                >
+                  <p className="text-lg">{card.card_name}</p>
+                  <p className="text-sm text-left">- {card.description}</p>
+                </div>
+              )}
+              <CardImage card={card} w={43} noHover={true} />
             </div>
           ))}
         </div>
