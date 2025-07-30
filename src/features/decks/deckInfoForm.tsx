@@ -156,8 +156,9 @@ export default function DeckInfoForm({
                 cardObj && handleKeyCardSelect(card.card_id, cardObj)
               }
             />
-            <span className="mt-3">Descripción</span>
+            <span className="mt-3">Description</span>
             <textarea
+              maxLength={40}
               placeholder="Description"
               value={card.description || ""}
               onChange={(e) =>
@@ -165,6 +166,9 @@ export default function DeckInfoForm({
               }
               className="w-full pl-5 p-2 bg-white clip-diagonal-small text-slate-800 mb-2"
             />
+            <p className="text-sm text-gray-500 text-right">
+              {card.description.length} / 40
+            </p>
             <div className="flex justify-center">
               <MainButton
                 onClick={() => handleRemoveKeyCard(card.card_id)}
@@ -201,6 +205,7 @@ export default function DeckInfoForm({
             />
             <span className="mt-3">Description</span>
             <textarea
+              maxLength={400}
               placeholder="Extra Notes"
               value={danger.extra_notes || ""}
               onChange={(e) =>
@@ -212,6 +217,9 @@ export default function DeckInfoForm({
               }
               className="w-full pl-5 p-2 bg-white clip-diagonal-small text-slate-800"
             />
+            <p className="text-sm text-gray-500 text-right">
+              {danger.extra_notes.length} / 400
+            </p>
             <span className="mt-3">Counters</span>
             <CardSelector
               cardList={cardList}

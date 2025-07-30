@@ -40,7 +40,7 @@ const BottomLeftNotification = ({ message, duration, type, show, onClose }: Bott
     if (!show) return null;
 
     return (
-        <div className='absolute bottom-5 left-5 w-[300px] h-32 bg-slate-800 text-white flex flex-col items-center clip-diagonal p-5 z-50'>
+        <div className='fixed bottom-5 left-5 w-[300px] h-32 bg-slate-800 text-white flex flex-col items-center clip-diagonal p-5 z-50'>
             <div className="flex flex-col w-[80%] justify-between h-full">
                 <p className='mb-2 text-md'>{message}</p>
                 <Progress

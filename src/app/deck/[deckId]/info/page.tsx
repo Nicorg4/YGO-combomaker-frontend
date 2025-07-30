@@ -30,7 +30,7 @@ const DeckInfo = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
 
   const [notification, setNotification] = useState<
     Omit<BottomLefNotificationProps, "onClose">
@@ -85,6 +85,31 @@ const DeckInfo = () => {
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
+    const isIncompleteKeyCard = ({
+      card_id,
+      card_name,
+      description,
+    }: KeyCard) =>
+      card_id === null || card_name.trim() === "" || description.trim() === "";
+
+    const isIncompleteMainDanger = ({ card_id, card_name }: MainDanger) =>
+      card_id === null || card_name.trim() === "";
+
+    const hasIncompleteKeyCards = keyCards.some(isIncompleteKeyCard);
+    const hasIncompleteMainDangers = mainDangers.some(isIncompleteMainDanger);
+
+    if (hasIncompleteKeyCards || hasIncompleteMainDangers) {
+      setNotification({
+        ...notification,
+        message: "Error updating deck. Please fill all fields",
+        type: "error",
+        show: true,
+        duration: 5000,
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
     if (typeof deckId !== "string") return;
     const payload = {
       key_cards: keyCards,
@@ -142,9 +167,7 @@ const DeckInfo = () => {
       <MainWrapper>
         {!isEditing ? (
           <div className="flex flex-col space-y-3 flex-1">
-            <h1 className="text-2xl font-bold text-white">
-              {name} deck info
-            </h1>
+            <h1 className="text-2xl font-bold text-white">{name} deck info</h1>
             {Object.entries(components).map(([key, component]) => (
               <div
                 key={key}
