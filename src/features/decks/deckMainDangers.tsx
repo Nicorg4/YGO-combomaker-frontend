@@ -22,8 +22,6 @@ const DeckMainDangers = ({ mainDangers }: Props) => {
             <div
               key={index}
               className="flex flex-col mb-3 gap-1 justify-center w-full relative"
-              onMouseEnter={() => setHoveredCardIndex(index)}
-              onMouseLeave={() => setHoveredCardIndex(null)}
             >
               {hoveredCardIndex === index && (
                 <div className="absolute top-0 left-16 z-50 pointer-events-none bg-slate-800 clip-diagonal-small p-2 text-white">
@@ -31,8 +29,13 @@ const DeckMainDangers = ({ mainDangers }: Props) => {
                   <p className="text-sm text-left">- {card.extra_notes}</p>
                 </div>
               )}
-              <div className="flex items-center space-x-4 text-slate-800">
-                <CardImage card={card} w={43} noHover={true} />
+              <div className="flex items-center space-x-4 text-slate-800 cursor-help">
+                <div
+                  onMouseEnter={() => setHoveredCardIndex(index)}
+                  onMouseLeave={() => setHoveredCardIndex(null)}
+                >
+                  <CardImage card={card} w={43} noHover={true} />
+                </div>
                 <FaArrowRight />
                 <div className="flex flex-1">
                   {card.responses.map((response, index) => (
