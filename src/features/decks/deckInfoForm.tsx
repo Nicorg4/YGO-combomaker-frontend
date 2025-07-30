@@ -169,7 +169,7 @@ export default function DeckInfoForm({
             <p className="text-sm text-gray-500 text-right">
               {card.description.length} / 40
             </p>
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-2">
               <MainButton
                 onClick={() => handleRemoveKeyCard(card.card_id)}
                 text={"Remove"}

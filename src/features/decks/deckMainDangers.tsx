@@ -21,28 +21,18 @@ const DeckMainDangers = ({ mainDangers }: Props) => {
           mainDangers.map((card, index) => (
             <div
               key={index}
-              className="flex flex-col mb-3 gap-1 justify-center w-full "
+              className="flex flex-col mb-3 gap-1 justify-center w-full relative"
+              onMouseEnter={() => setHoveredCardIndex(index)}
+              onMouseLeave={() => setHoveredCardIndex(null)}
             >
               {hoveredCardIndex === index && (
-                <div
-                  className={
-                    "bg-slate-800 clip-diagonal-small p-2 left-[100px] text-white absolute z-50 pointer-events-none"
-                  }
-                >
-                  <div className="bg-slate-800 clip-diagonal-small p-1 px-2 text-white">
-                    <p className="text-lg text-left">{card.card_name}</p>
-                    <p className="text-sm text-left">- {card.extra_notes}</p>
-                  </div>
+                <div className="absolute top-0 left-16 z-50 pointer-events-none bg-slate-800 clip-diagonal-small p-2 text-white">
+                  <p className="text-lg text-left">{card.card_name}</p>
+                  <p className="text-sm text-left">- {card.extra_notes}</p>
                 </div>
               )}
               <div className="flex items-center space-x-4 text-slate-800">
-                <div
-                  onMouseEnter={() => setHoveredCardIndex(index)}
-                  onMouseLeave={() => setHoveredCardIndex(null)}
-                  className="cursor-help"
-                >
-                  <CardImage card={card} w={43} noHover={true} />
-                </div>
+                <CardImage card={card} w={43} noHover={true} />
                 <FaArrowRight />
                 <div className="flex flex-1">
                   {card.responses.map((response, index) => (
