@@ -18,7 +18,7 @@ const DeckKeyCards = ({ keyCards }: Props) => {
       </h2>
       {keyCards.length > 0 ? (
         <div className="grid grid-cols-6 lg:grid-cols-8 gap-1 overflow-y-auto overflow-x-hidden custom-scrollbar-alt px-10">
-          {[...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards].map((card, index) => (
+          {keyCards.map((card, index) => (
             <div
               key={index}
               className="mb-2 flex justify-center relative cursor-help"
