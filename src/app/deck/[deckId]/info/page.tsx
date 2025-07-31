@@ -171,7 +171,7 @@ const DeckInfo = () => {
             {Object.entries(components).map(([key, component]) => (
               <div
                 key={key}
-                className="flex flex-col flex-1 bg-white/70 p-4 clip-diagonal"
+                className="flex flex-col flex-1 bg-white/70 p-4 clip-diagonal max-h-[25vh]"
               >
                 {component}
               </div>

@@ -12,11 +12,11 @@ type Props = {
 const DeckMainDangers = ({ mainDangers }: Props) => {
   const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
   return (
-    <div className="flex flex-col relative">
+    <div className="flex flex-col relative max-h-[20vh]">
       <h2 className="text-xl font-bold mb-4 text-center text-slate-800">
         Main dangers
       </h2>
-      <div className="h-[150px] overflow-auto custom-scrollbar-alt px-10">
+      <div className="overflow-auto custom-scrollbar-alt px-10">
         {mainDangers.length > 0 ? (
           mainDangers.map((card, index) => (
             <div
@@ -29,12 +29,13 @@ const DeckMainDangers = ({ mainDangers }: Props) => {
                   <p className="text-sm text-left">- {card.extra_notes}</p>
                 </div>
               )}
-              <div className="flex items-center space-x-4 text-slate-800 cursor-help">
+              <div className="flex items-center space-x-4 text-slate-800">
                 <div
                   onMouseEnter={() => setHoveredCardIndex(index)}
                   onMouseLeave={() => setHoveredCardIndex(null)}
+                  className="cursor-help"
                 >
-                  <CardImage card={card} w={43} noHover={true} />
+                  <CardImage card={card} w={50} noHover={true} />
                 </div>
                 <FaArrowRight />
                 <div className="flex flex-1">
@@ -43,7 +44,7 @@ const DeckMainDangers = ({ mainDangers }: Props) => {
                       key={index}
                       className="flex items-center space-x-2 mr-2"
                     >
-                      <CardImage card={response} w={30} />
+                      <CardImage card={response} w={35} />
                     </div>
                   ))}
                 </div>

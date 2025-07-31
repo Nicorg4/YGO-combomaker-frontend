@@ -12,13 +12,13 @@ type Props = {
 const DeckKeyCards = ({ keyCards }: Props) => {
   const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col max-h-[20vh]">
       <h2 className="text-xl font-bold mb-4 text-center text-slate-800">
         Key Cards
       </h2>
       {keyCards.length > 0 ? (
-        <div className="grid grid-cols-6 lg:grid-cols-8 gap-1 max-h-[150px] overflow-auto custom-scrollbar-alt px-10">
-          {keyCards.map((card, index) => (
+        <div className="grid grid-cols-6 lg:grid-cols-8 gap-1 overflow-y-auto overflow-x-hidden custom-scrollbar-alt px-10">
+          {[...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards,...keyCards].map((card, index) => (
             <div
               key={index}
               className="mb-2 flex justify-center relative cursor-help"
@@ -41,7 +41,7 @@ const DeckKeyCards = ({ keyCards }: Props) => {
                   <p className="text-sm text-left">- {card.description}</p>
                 </div>
               )}
-              <CardImage card={card} w={43} noHover={true} />
+              <CardImage card={card} w={45} noHover={true} />
             </div>
           ))}
         </div>
