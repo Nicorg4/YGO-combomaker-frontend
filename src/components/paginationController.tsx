@@ -11,8 +11,8 @@ type Props = {
   totalPages: number;
   goBack: () => void;
   goNext: () => void;
-  goStart: () => void;
-  goEnd: () => void;
+  goStart?: () => void;
+  goEnd?: () => void;
 };
 
 const PaginationController = ({
