@@ -58,7 +58,6 @@ const DeckInfo = () => {
           setMainDangers(deckInfo.main_dangers);
           setNotes(deckInfo.note);
           setName(deckInfo.name);
-          console.log("Deck Info:", deckInfo);
         }
       } catch (error) {
         console.error("Error fetching deck info:", error);
@@ -116,6 +115,7 @@ const DeckInfo = () => {
       main_dangers: mainDangers,
       note: notes,
     };
+    
     try {
       await setDeckInfo(deckId, payload);
       setNotification({

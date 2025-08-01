@@ -1,9 +1,12 @@
-import { useState } from "react";
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
 import { KeyCard, MainDanger } from "@/types/types";
 import CardSearchInput from "../cards/cardSearchInput";
 import CardSelector from "../combos/startingHandSelector";
 import { FaPlus } from "react-icons/fa6";
 import MainButton from "@/components/mainButton";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
 interface Props {
   keyCards: KeyCard[];
@@ -29,13 +32,12 @@ export default function DeckInfoForm({
     useState<MainDanger[]>(mainDangers);
   const [localNotes, setLocalNotes] = useState<string>(notes);
 
-  const updateParent = (
-    kc = localKeyCards,
-    md = localMainDangers,
-    n = localNotes
-  ) => {
-    onChange({ keyCards: kc, mainDangers: md, notes: n });
-  };
+  const updateParent = useCallback(
+    (kc = localKeyCards, md = localMainDangers, n = localNotes) => {
+      onChange({ keyCards: kc, mainDangers: md, notes: n });
+    },
+    [localKeyCards, localMainDangers, localNotes, onChange]
+  );
 
   const handleAddKeyCard = () => {
     const newCard: KeyCard = {
@@ -140,6 +142,44 @@ export default function DeckInfoForm({
     updateParent(undefined, undefined, value);
   };
 
+  useEffect(() => {
+    updateParent();
+  }, [updateParent]);
+
+  const moveMainDangerUp = (index: number) => {
+    setLocalMainDangers((prevDangers) => {
+      if (index === 0) return prevDangers;
+
+      const newDangers = [...prevDangers];
+      [newDangers[index - 1], newDangers[index]] = [
+        newDangers[index],
+        newDangers[index - 1],
+      ];
+
+      return newDangers.map((danger, i) => ({
+        ...danger,
+        position: i,
+      }));
+    });
+  };
+
+  const moveMainDangerDown = (index: number) => {
+    setLocalMainDangers((prevDangers) => {
+      if (index >= prevDangers.length - 1) return prevDangers;
+
+      const newDangers = [...prevDangers];
+      [newDangers[index], newDangers[index + 1]] = [
+        newDangers[index + 1],
+        newDangers[index],
+      ];
+
+      return newDangers.map((danger, i) => ({
+        ...danger,
+        position: i,
+      }));
+    });
+  };
+
   return (
     <form className="flex flex-col space-y-6">
       <div className="flex flex-col border-1 border-white/70 p-3">
@@ -193,7 +233,7 @@ export default function DeckInfoForm({
         <h2 className="text-xl font-bold mb-2 text-center text-white">
           Main Dangers
         </h2>
-        {localMainDangers.map((danger) => (
+        {localMainDangers.map((danger, index) => (
           <div key={danger.card_id} className="flex flex-col mb-4 p-2">
             <span>Card</span>
             <CardSearchInput
@@ -229,12 +269,26 @@ export default function DeckInfoForm({
               }
               maxCards={5}
             />
-            <div className="flex justify-center mt-2">
+            <div className="flex justify-center mt-2 gap-2">
               <MainButton
                 onClick={() => handleRemoveDanger(danger.card_id)}
                 text={"Remove"}
                 type={"delete"}
               />
+              <MainButton
+                onClick={() => moveMainDangerDown(index)}
+                text={"Move Down"}
+                type={"cancel"}
+              >
+                <MdKeyboardArrowDown />
+              </MainButton>
+              <MainButton
+                onClick={() => moveMainDangerUp(index)}
+                text={"Move Up"}
+                type={"cancel"}
+              >
+                <MdKeyboardArrowUp />
+              </MainButton>
             </div>
           </div>
         ))}

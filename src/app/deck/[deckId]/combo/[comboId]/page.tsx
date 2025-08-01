@@ -33,7 +33,6 @@ const StepByStepCombo = () => {
         if (typeof comboId === "string" && typeof deckId === "string") {
           const fetchedCombo = await getComboById(comboId);
           const fetchedSteps = await getStepsByComboId(comboId);
-          console.log("Fetched combo:", fetchedSteps);
           setCombo(fetchedCombo);
           setSteps(fetchedSteps);
         }

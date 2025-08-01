@@ -64,7 +64,6 @@ const CreateComboForm = ({
     };
     const loadComboData = () => {
       if (!combo || !steps) return;
-      console.log(steps[0].step_targets[0]);
       setFormData({
         title: combo.title,
         author: combo.author,

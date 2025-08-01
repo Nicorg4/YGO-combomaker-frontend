@@ -47,7 +47,6 @@ export default function App() {
       try {
         const fetchedDecksInfo = await getAllDecks();
         setDecks(fetchedDecksInfo.decks);
-        console.log(fetchedDecksInfo);
       } catch (error) {
         console.error('Error fetching decks:', error);
       } finally {
