@@ -33,7 +33,7 @@ const DeckBox = (props: Props) => {
         {props.deck.combos_count}
       </span>
       {props.deck.newCombos > 0 && (
-        <span className="absolute z-500 left-0 bottom-0 px-1 bg-black/80 text-sm text-amber-300 font-bold">
+        <span className="absolute z-500 left-0 bottom-0 px-1 bg-black/80 text-sm text-slate-300 font-bold">
           NEW
         </span>
       )}

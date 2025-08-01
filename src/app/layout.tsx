@@ -20,16 +20,16 @@ export const metadata: Metadata = {
 
 type Props = {
   children: React.ReactNode;
-}
+};
 
-export default function RootLayout({ children, }: Props) {
+export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className='fixed bottom-5 right-5'>
-          <Image src={'/images/puzzle.png'} width={50} height={50} alt="Logo" />
+        <div className="fixed bottom-5 right-5">
+          <Image src={"/images/puzzle.png"} width={50} height={50} alt="Logo" />
         </div>
         {children}
       </body>

@@ -1,8 +1,10 @@
 "use client";
 
 import LoadingAnimation from "@/components/loadingAnimation";
+import MainButton from "@/components/mainButton";
 import MainContainer from "@/components/mainContainer";
 import MainWrapper from "@/components/mainWrapper";
+import NewsPopUp from "@/components/NewsPopUp";
 import PaginationController from "@/components/paginationController";
 import DeckBox from "@/features/decks/deckBox";
 import { getAllDecks } from "@/features/decks/useDecks";
@@ -19,6 +21,7 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
+  const [newsPopUpVisible, setNewsPopUpVisible] = useState(false);
 
   const ITEMS_PER_PAGE = useMemo(() => {
     if (windowWidth >= 768) return 15;
@@ -74,19 +77,30 @@ export default function App() {
     deck.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const toggleShowNewsPopUp = () => {
+    setNewsPopUpVisible((prev) => !prev);
+  };
+
   if (isLoading) {
     return <LoadingAnimation />;
   }
 
   return (
     <MainContainer>
+      {newsPopUpVisible && (
+        <NewsPopUp toggleShowNewsPopUp={toggleShowNewsPopUp}/>
+      )}
       <div className="flex flex-col bg-slate-900 p-10 min-w-full align-middle clip-diagonal gap-3 slide-in-from-top">
         <h1 className="text-xl md:text-4xl">Yu-Gi-Oh! Combo Maker</h1>
         <p className="text-sm md:text-xl">
           Select your favourite deck, explore{" "}
-          <strong className="text-amber-300">combos</strong> or create a new
+          <strong className="text-slate-500">combos</strong> or create a new
           one.
         </p>
+      </div>
+      <div className="fixed top-5 left-5 flex gap-2 justify-center items-center">
+        <p>V1.3.0</p>
+        <MainButton onClick={toggleShowNewsPopUp} text={"What´s new?"} type={"confirm"}/>
       </div>
       <MainWrapper>
         <input
