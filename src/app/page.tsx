@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import LoadingAnimation from "@/components/loadingAnimation";
 import MainContainer from "@/components/mainContainer";
@@ -7,16 +7,18 @@ import PaginationController from "@/components/paginationController";
 import DeckBox from "@/features/decks/deckBox";
 import { getAllDecks } from "@/features/decks/useDecks";
 import { Deck } from "@/types/types";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 
 export default function App() {
   const [decks, setDecks] = useState<Deck[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 768);
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 768
+  );
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const [searchQuery, setSearchQuery] = useState('')
+  const [searchQuery, setSearchQuery] = useState("");
 
   const ITEMS_PER_PAGE = useMemo(() => {
     if (windowWidth >= 768) return 15;
@@ -33,8 +35,8 @@ export default function App() {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -48,7 +50,7 @@ export default function App() {
         const fetchedDecksInfo = await getAllDecks();
         setDecks(fetchedDecksInfo.decks);
       } catch (error) {
-        console.error('Error fetching decks:', error);
+        console.error("Error fetching decks:", error);
       } finally {
         setIsLoading(false);
       }
@@ -58,53 +60,71 @@ export default function App() {
 
   const goNext = () => {
     if (currentPage < totalPages) {
-      setCurrentPage(prev => prev + 1);
+      setCurrentPage((prev) => prev + 1);
     }
   };
 
   const goBack = () => {
     if (currentPage > 1) {
-      setCurrentPage(prev => prev - 1);
+      setCurrentPage((prev) => prev - 1);
     }
   };
 
-  const filteredDecks = decks.filter(deck => (deck.name).toLowerCase().includes(searchQuery.toLowerCase()))
+  const filteredDecks = decks.filter((deck) =>
+    deck.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   if (isLoading) {
-    return <LoadingAnimation />
+    return <LoadingAnimation />;
   }
 
   return (
     <MainContainer>
       <div className="flex flex-col bg-slate-900 p-10 min-w-full align-middle clip-diagonal gap-3 slide-in-from-top">
         <h1 className="text-xl md:text-4xl">Yu-Gi-Oh! Combo Maker</h1>
-        <p className="text-sm md:text-xl">Select your favourite deck, explore <strong className="text-amber-300">combos</strong> or create a new one.</p>
+        <p className="text-sm md:text-xl">
+          Select your favourite deck, explore{" "}
+          <strong className="text-amber-300">combos</strong> or create a new
+          one.
+        </p>
       </div>
       <MainWrapper>
         <input
-          type='text'
-          placeholder='Search for a deck.. '
-          className='w-full p-3 pl-7 mb-2 bg-white/80 text-slate-800 clip-diagonal m-auto max-w-[90%]'
+          type="text"
+          placeholder="Search for a deck.. "
+          className="w-full p-3 pl-7 mb-2 bg-white/80 text-slate-800 clip-diagonal m-auto max-w-[90%]"
           onChange={(e) => setSearchQuery(e.target.value)}
         />
         <div className="flex flex-col justify-between items-center flex-1">
           {decks.length === 0 ? (
             <div className="flex flex-col justify-center items-center flex-1">
-              <p className="text-xl text-white/50">No decks found :{'('}</p>
+              <p className="text-xl text-white/50">No decks found :{"("}</p>
             </div>
           ) : (
             <div className="flex flex-col">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
                 {filteredDecks
-                  .slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
+                  .slice(
+                    (currentPage - 1) * ITEMS_PER_PAGE,
+                    currentPage * ITEMS_PER_PAGE
+                  )
                   .map((deck) => (
-                    <DeckBox key={deck.id} deck={deck} onClick={() => goToPage(deck.id)} />
+                    <DeckBox
+                      key={deck.id}
+                      deck={deck}
+                      onClick={() => goToPage(deck.id)}
+                    />
                   ))}
               </div>
             </div>
           )}
           {totalPages > 1 && (
-            <PaginationController currentPage={currentPage - 1} totalPages={totalPages - 1} goBack={goBack} goNext={goNext} />
+            <PaginationController
+              currentPage={currentPage - 1}
+              totalPages={totalPages - 1}
+              goBack={goBack}
+              goNext={goNext}
+            />
           )}
         </div>
       </MainWrapper>

@@ -4,6 +4,7 @@ export type Deck = {
   description: string;
   image_url: string;
   combos_count: number;
+  newCombos: number;
 };
 
 export type Card = {
