@@ -9,6 +9,7 @@ type Props = {
   isLoading?: boolean;
   responsive?: boolean;
   reverse?: boolean;
+  isCreateButton?: boolean;
 };
 
 const MainButton = ({
@@ -17,7 +18,6 @@ const MainButton = ({
   text,
   type,
   isLoading,
-  responsive,
   reverse,
 }: Props) => {
   const bgColor =
@@ -32,13 +32,12 @@ const MainButton = ({
     type === "delete" || type === "main" ? "text-white" : "text-slate-800";
   const hoverColor =
     type === "delete" ? "hover:bg-red-300" : type === "main" ? "hover:bg-slate-400": "hover:bg-gray-300";
-  const show = responsive ? "flex md:hidden" : "hidden md:flex";
   const reversed = reverse ? "flex-row-reverse" : "";
   return (
     <button
       type="button"
       onClick={onClick}
-      className={`${bgColor} ${show} ${reversed} px-3 p-2 gap-1 clip-diagonal-small items-center ${textColor} font-bold ${hoverColor} transition-all duration-300 cursor-pointer justify-center align-middle max-h-12`}
+      className={`${bgColor} flex ${reversed} px-3 p-2 gap-1 clip-diagonal-small items-center ${textColor} font-bold ${hoverColor} transition-all duration-300 cursor-pointer justify-center align-middle max-h-12 min-w-[80px]`}
     >
       {isLoading ? (
         <AiOutlineLoading3Quarters className="animate-spin border-white" />

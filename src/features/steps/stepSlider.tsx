@@ -37,7 +37,7 @@ const StepSlider = ({ steps }: Props) => {
   };
   return (
     <div
-      className="flex flex-col items-center border-2 border-white/50 flex-1 p-5 bg-slate-900 min-h-[590px]"
+      className="flex flex-col items-center border-2 border-white/50 flex-1 p-5 bg-slate-900 min-h-[600px]"
       onWheel={handleWheel}
     >
       {steps.length > 0 && steps[currentStepIndex] && (

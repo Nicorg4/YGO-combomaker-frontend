@@ -109,27 +109,6 @@ const CreateComboForm = ({
     });
   };
 
-  const goNext = () => {
-    if (isFirstStep) {
-      if (formData.steps.length === 0) {
-        setFormData((prev) => ({
-          ...prev,
-          steps: [
-            {
-              action_text: "",
-              step_targets: [],
-              card_id: 0,
-              step_order: 1,
-            },
-          ],
-        }));
-      }
-      setCurrentStepIndex(1);
-    } else if (currentStepIndex < formData.steps.length) {
-      setCurrentStepIndex(currentStepIndex + 1);
-    }
-  };
-
   const addStep = () => {
     setFormData((prev) => {
       const insertIndex = currentStepIndex;
@@ -155,8 +134,24 @@ const CreateComboForm = ({
     setCurrentStepIndex((prev) => prev + 1);
   };
 
+  const goNext = () => {
+    if (currentStepIndex < formData.steps.length) {
+      setCurrentStepIndex(currentStepIndex + 1);
+    }
+  };
+
   const goBack = () => {
     if (currentStepIndex > 0) setCurrentStepIndex(currentStepIndex - 1);
+  };
+
+  const goStart = () => {
+    if (currentStepIndex > 0) setCurrentStepIndex(0);
+  };
+
+  const goEnd = () => {
+    if (currentStepIndex < formData.steps.length) {
+      setCurrentStepIndex(formData.steps.length);
+    }
   };
 
   const deleteStep = (indexToDelete: number) => {
@@ -285,10 +280,14 @@ const CreateComboForm = ({
           <span className="pl-2 w-full text-left mt-3">Action</span>
           <input
             placeholder="Describe step action"
+            maxLength={45}
             className="w-full p-2 bg-white/80 text-slate-700 clip-diagonal-small"
             value={formData.steps[currentStepIndex - 1]?.action_text ?? ""}
             onChange={(e) => handleStepChange("action_text", e.target.value)}
           />
+          <p className="text-sm text-gray-500 text-right w-full">
+            {formData.steps[currentStepIndex - 1]?.action_text.length} / 45
+          </p>
           <span className="pl-2 w-full text-left mt-3">Targets</span>
           <CardSelector
             cardList={cardList}
@@ -336,6 +335,8 @@ const CreateComboForm = ({
         totalPages={formData.steps.length}
         goBack={goBack}
         goNext={goNext}
+        goStart={goStart}
+        goEnd={goEnd}
       />
     </div>
   );

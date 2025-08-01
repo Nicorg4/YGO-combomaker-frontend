@@ -222,8 +222,24 @@ const DeckCombos = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
               <div className="flex items-right">
-                <MainButton onClick={() => goToPage(`/deck/${deckId}/create`)} text={"Create"} type={"confirm"}><GoPlus className="text-3xl" /></MainButton>
-                <MainButton onClick={() => goToPage(`/deck/${deckId}/create`)} text={""} type={"confirm"} responsive={true}><GoPlus className="text-3xl" /></MainButton>
+                <div className="hidden md:flex">
+                  <MainButton
+                    onClick={() => goToPage(`/deck/${deckId}/create`)}
+                    text={"Create"}
+                    type={"confirm"}
+                  >
+                    <GoPlus className="text-3xl" />
+                  </MainButton>
+                </div>
+                <div className="flex md:hidden">
+                  <MainButton
+                    onClick={() => goToPage(`/deck/${deckId}/create`)}
+                    text={""}
+                    type={"confirm"}
+                  >
+                    <GoPlus className="text-3xl" />
+                  </MainButton>
+                </div>
               </div>
             </div>
             <FilteringControls

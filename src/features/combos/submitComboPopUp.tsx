@@ -22,7 +22,7 @@ const SubmitComboPopUp = ({
 }: Props) => {
   return (
     <div className="absolute top-0 left-0 w-full h-full bg-black/50 flex justify-center items-center z-200">
-      <div className="bg-white p-10 shadow-lg clip-diagonal min-w-[700px]">
+      <div className="bg-white p-10 shadow-lg clip-diagonal md:min-w-[800px]">
         <h2 className="text-2xl font-bold mb-2 text-slate-700">{title}</h2>
         <p className="mb-5 text-xl text-slate-700">
           Are you sure you want to {action} this combo?
@@ -33,12 +33,14 @@ const SubmitComboPopUp = ({
             onClick={onCancel}
             text={"Cancel"}
             type={"cancel"}
+            responsive={false}
           />
           <MainButton
             onClick={onConfirm}
             text={"Confirm"}
             type={"main"}
             isLoading={isSubmitting}
+            responsive={false}
           />
         </div>
       </div>

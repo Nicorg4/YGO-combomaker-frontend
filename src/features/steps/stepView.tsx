@@ -14,9 +14,9 @@ const StepView = (props: Props) => {
     return (
         <div className='flex flex-col gap-3 items-center flex-1 justify-center mb-5'>
             <Image src={getImageFromApi(props.step.card_id)} alt={props.step.action_text} width={120} height={120} className='border-2 border-white/50' />
-            <div className='bg-white/80 p-1 pl-5 pr-5 clip-diagonal-small text-slate-700 flex items-center gap-2'>
+            <div className='bg-white/80 p-1 pl-5 pr-5 clip-diagonal-small text-slate-700 flex items-center gap-5'>
                 <GiStarSwirl className='text-xl' />
-                <span className='font-bold text-xl '>{props.step.action_text}</span>
+                <span className='font-bold text-xl'>{props.step.action_text}</span>
             </div>
             {props.step.step_targets.length > 0 && (
                 <div className='flex flex-col gap-3 items-center'>
