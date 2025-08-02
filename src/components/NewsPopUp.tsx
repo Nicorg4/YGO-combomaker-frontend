@@ -24,6 +24,7 @@ const NewsPopUp = ({ toggleShowNewsPopUp }: Props) => {
               ✨ Quality of Life Improvements
             </h2>
             <ul className="list-disc list-inside space-y-1 text-white/70">
+              <li>Master Duel Meta integration to view deck recipes and card info</li>
               <li>Added go to end and go to start buttons in combo viewer</li>
               <li>New “🆕” tag highlights decks with newly added combos</li>
               <li>Sort options for starting hand, and main dangers in Deck Info</li>

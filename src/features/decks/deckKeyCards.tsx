@@ -10,6 +10,12 @@ type Props = {
 };
 
 const DeckKeyCards = ({ keyCards }: Props) => {
+  const goToMasterDuelMeta = (deckName: string) => {
+    const encodedName = encodeURIComponent(deckName);
+    const url = `https://www.masterduelmeta.com/cards/${encodedName}`;
+    window.open(url, "_blank");
+  };
+
   const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
   return (
     <div className="flex flex-col max-h-[20vh]">
@@ -24,6 +30,7 @@ const DeckKeyCards = ({ keyCards }: Props) => {
               className="mb-2 flex justify-center relative cursor-help"
               onMouseEnter={() => setHoveredCardIndex(index)}
               onMouseLeave={() => setHoveredCardIndex(null)}
+              onClick={() => goToMasterDuelMeta(card.card_name)}
             >
               {hoveredCardIndex === index && (
                 <div
