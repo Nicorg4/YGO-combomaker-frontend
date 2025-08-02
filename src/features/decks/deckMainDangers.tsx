@@ -14,7 +14,7 @@ const DeckMainDangers = ({ mainDangers }: Props) => {
   return (
     <div className="flex flex-col relative max-h-[20vh]">
       <h2 className="text-xl font-bold mb-4 text-center text-slate-800">
-        Main dangers
+        Combo starters
       </h2>
       <div className="overflow-auto custom-scrollbar-alt px-10">
         {mainDangers.length > 0 ? (

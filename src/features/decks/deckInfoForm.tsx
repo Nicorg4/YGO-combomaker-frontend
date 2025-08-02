@@ -231,7 +231,7 @@ export default function DeckInfoForm({
 
       <div className="flex flex-col border-1 border-white/70 p-3">
         <h2 className="text-xl font-bold mb-2 text-center text-white">
-          Main Dangers
+          Combo starters
         </h2>
         {localMainDangers.map((danger, index) => (
           <div key={danger.card_id} className="flex flex-col mb-4 p-2">
