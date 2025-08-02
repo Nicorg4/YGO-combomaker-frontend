@@ -187,6 +187,13 @@ const DeckCombos = () => {
     }
   };
 
+  const isNewCombo = (date: string) => {
+    const newDate = new Date(date);
+    const dateToCompare = new Date();
+    dateToCompare.setDate(dateToCompare.getDate() - 5);
+    return newDate > dateToCompare;
+  };
+
   if (isLoading) {
     return <LoadingAnimation />;
   }
@@ -266,13 +273,19 @@ const DeckCombos = () => {
               ) : (
                 <>
                   {filteredAndSortedCombos.map((combo) => (
-                    <ComboBox
-                      key={combo.id}
-                      combo={combo}
-                      isExpanded={expandedComboIds.includes(combo.id)}
-                      onClick={() => toggleExpandCombo(combo.id)}
-                      handleDeleteCombo={handleDeleteCombo}
-                    />
+                    <div className="flex w-full relative" key={combo.id}>
+                      {isNewCombo(combo.created_at) && (
+                        <span className="absolute z-500 right-0 top-0 px-1 bg-slate-700 text-sm text-slate-300 font-bold pointer-events-none">
+                          NEW
+                        </span>
+                      )}
+                      <ComboBox
+                        combo={combo}
+                        isExpanded={expandedComboIds.includes(combo.id)}
+                        onClick={() => toggleExpandCombo(combo.id)}
+                        handleDeleteCombo={handleDeleteCombo}
+                      />
+                    </div>
                   ))}
                 </>
               )}
