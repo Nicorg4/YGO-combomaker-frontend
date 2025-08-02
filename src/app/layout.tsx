@@ -28,7 +28,7 @@ export default function RootLayout({ children }: Props) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="fixed bottom-5 right-5">
+        <div className="fixed bottom-5 right-5 z-10">
           <Image src={"/images/puzzle.png"} width={50} height={50} alt="Logo" />
         </div>
         {children}
