@@ -3,9 +3,10 @@ import { formatDate } from "@/utils/auxFunctions";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
-import { IoEnterOutline, IoTrashOutline } from "react-icons/io5";
+import { IoTrashOutline } from "react-icons/io5";
 import { MdOutlineEdit } from "react-icons/md";
 import CardImage from "@/components/cardImage";
+import { TbCards } from "react-icons/tb";
 
 type Props = {
   combo: Combo;
@@ -39,13 +40,13 @@ const ComboBox = (props: Props) => {
       <div className="flex justify-between transition-all p-5 duration-300">
         <div className="flex items-center gap-2">
           <button
-            className="bg-slate-700 pr-3 p-2 text-2xl hover:opacity-70 cursor-pointer clip-diagonal-small z-100"
+            className="bg-slate-700 p-2 text-xl hover:opacity-70 cursor-pointer clip-diagonal-small z-100"
             onClick={(e) => {
               e.stopPropagation();
               goToPage(`/deck/${props.combo.deck_id}/combo/${props.combo.id}`);
             }}
           >
-            <IoEnterOutline />
+            <TbCards />
           </button>
           <CardImage card={props.combo.starting_hand[0]} w={30} />
           <h2 className="text-slate-800 text-md font-bold whitespace-nowrap overflow-hidden overflow-ellipsis max-w-[130px] sm:max-w-[300px]">

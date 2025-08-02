@@ -26,15 +26,17 @@ const PaginationController = ({
   return (
     <div className="flex flex-col gap-2 items-center justify-center mt-3">
       <div className="flex gap-2 items-center justify-center">
-        <button
-          className={`flex p-2 bg-white/80 text-slate-700 opacity-30 clip-diagonal-small ${
-            currentPage > 0 && "opacity-100 cursor-pointer hover:bg-white"
-          }`}
-          disabled={currentPage === 0}
-          onClick={goStart}
-        >
-          <MdOutlineKeyboardDoubleArrowLeft className="text-xl" />
-        </button>
+        {goStart && (
+          <button
+            className={`flex p-2 bg-white/80 text-slate-700 opacity-30 clip-diagonal-small ${
+              currentPage > 0 && "opacity-100 cursor-pointer hover:bg-white"
+            }`}
+            disabled={currentPage === 0}
+            onClick={goStart}
+          >
+            <MdOutlineKeyboardDoubleArrowLeft className="text-xl" />
+          </button>
+        )}
         <button
           className={`flex p-2 bg-white/80 text-slate-700 opacity-30 clip-diagonal-small ${
             currentPage > 0 && "opacity-100 cursor-pointer hover:bg-white"
@@ -56,15 +58,17 @@ const PaginationController = ({
         >
           <MdOutlineKeyboardArrowRight className="text-2xl" />
         </button>
-        <button
-          className={`flex p-2 bg-white/80 text-slate-700 opacity-30 clip-diagonal-small ${
-            currentPage < totalPages &&
-            "opacity-100 cursor-pointer hover:bg-white"
-          }`}
-          onClick={goEnd}
-        >
-          <MdOutlineKeyboardDoubleArrowRight className="text-xl" />
-        </button>
+        {goEnd && (
+          <button
+            className={`flex p-2 bg-white/80 text-slate-700 opacity-30 clip-diagonal-small ${
+              currentPage < totalPages &&
+              "opacity-100 cursor-pointer hover:bg-white"
+            }`}
+            onClick={goEnd}
+          >
+            <MdOutlineKeyboardDoubleArrowRight className="text-xl" />
+          </button>
+        )}
       </div>
     </div>
   );
