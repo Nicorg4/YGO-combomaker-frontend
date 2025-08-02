@@ -1,7 +1,6 @@
 "use client";
 
 import LoadingAnimation from "@/components/loadingAnimation";
-import MainButton from "@/components/mainButton";
 import MainContainer from "@/components/mainContainer";
 import MainWrapper from "@/components/mainWrapper";
 import NewsPopUp from "@/components/NewsPopUp";
@@ -98,9 +97,9 @@ export default function App() {
           one.
         </p>
       </div>
-      <div className="fixed top-5 left-5 flex gap-2 justify-center items-center">
-        <p>V1.3.0</p>
-        <MainButton onClick={toggleShowNewsPopUp} text={"What´s new?"} type={"confirm"}/>
+      <div className="fixed top-5 left-5 flex justify-center items-center clip-diagonal-small">
+        <p className="p-2 pl-3 bg-slate-800 pointer-events-none">V1.3.0</p>
+        <button className="p-2 bg-white/70  text-slate-800 font-bold cursor-pointer hover:bg-white/90" onClick={toggleShowNewsPopUp}>What´s new?</button>
       </div>
       <MainWrapper>
         <input
