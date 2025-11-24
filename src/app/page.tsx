@@ -116,7 +116,7 @@ export default function App() {
 
       <div className="fixed top-5 left-5 flex items-center clip-diagonal-small overflow-hidden">
         <span className="px-3 py-2 bg-slate-800 text-white select-none">
-          V1.3.1
+          V1.4.0
         </span>
         <button
           onClick={toggleShowNewsPopUp}
