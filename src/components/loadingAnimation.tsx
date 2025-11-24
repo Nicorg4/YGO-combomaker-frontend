@@ -6,29 +6,33 @@ import Puzzle from "../../public/images/puzzle.png";
 import Kuriboh from "../../public/images/kuriboh.png";
 import Crimson from "../../public/images/crimson.png";
 import mainWallpaper from "../../public/images/main_wallpaper.png";
-import { usePathname } from "next/navigation";
 
 const IMAGES = [Puzzle, Kuriboh, Crimson];
 
-type Props = {
-  randomizeOnRouteChange?: boolean;
-};
-
-export default function LoadingAnimation({ randomizeOnRouteChange = false }: Props) {
-  const [image, setImage] = useState(() => {
-    return IMAGES[Math.floor(Math.random() * IMAGES.length)];
-  });
-
-  const pathname = usePathname();
+export default function LoadingAnimation() {
+  const [image, setImage] = useState<typeof Puzzle | null>(null);
+  const pickIndex = (max: number) => {
+    try {
+      const array = new Uint32Array(1);
+      crypto.getRandomValues(array);
+      return array[0] % max;
+    } catch (e) {
+      console.warn("Crypto random failed, falling back to Math.random()", e);
+      return Math.floor(Math.random() * max);
+    }
+  };
 
   useEffect(() => {
-    if (!randomizeOnRouteChange) return;
-    setImage(IMAGES[Math.floor(Math.random() * IMAGES.length)]);
-  }, [pathname, randomizeOnRouteChange]);
+    const idx = pickIndex(IMAGES.length);
+    console.log("[LoadingAnimation] picked index:", idx, "src:", IMAGES[idx].src);
+    setImage(IMAGES[idx]);
+  }, []);
+
+  if (!image) return null;
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-slate-700 flex justify-center items-center"
+      className="fixed inset-0 z-50 bg-slate-700 flex flex-col justify-center items-center gap-4"
       style={{
         backgroundImage: `url(${mainWallpaper.src})`,
         backgroundSize: "cover",
