@@ -161,12 +161,12 @@ const CardQuizPopUp = ({ toggleCardQuizPopUp }: Props) => {
         </button>
 
         {quizStarted ? (
-          <div>
-            <h1 className="text-2xl font-semibold text-white mb-4">
+          <div className="flex flex-col gap-4">
+            <h1 className="text-2xl font-semibold text-white">
               Guess the card!
             </h1>
 
-            <div className="flex border-t border-b border-white/50 justify-between items-center py-2 mb-4">
+            <div className="flex border-t border-b border-white/50 justify-between items-center py-2">
               <h2>Current streak: {currentStreak}</h2>
               <h2>Max streak: {maxStreak}</h2>
               <div className="flex gap-1 text-xl">
@@ -187,37 +187,37 @@ const CardQuizPopUp = ({ toggleCardQuizPopUp }: Props) => {
               setSelectedCard={(card) => setSelectedCard(card)}
             />
 
-            <div className="relative flex mt-5 w-full justify-center">
-              <div className="absolute top-3 h-[17px] w-37 bg-slate-700"></div>
-              {cardIsHovered && (
-                <div className="absolute top-0 left-0 z-50 pointer-events-none bg-slate-900 clip-diagonal-small p-3 text-white">
-                  <div className="flex mb-2">
-                    {quizCard.attribute ? (
-                      <p className="text-sm text-left font-bold">
-                        [{quizCard.attribute} / {quizCard.race}]
-                      </p>
-                    ) : (
-                      <p className="text-sm text-left font-bold">
-                        [{quizCard.race}]
-                      </p>
-                    )}
+            <div className="relative flex w-full justify-center">
+              <div className="absolute top-3 h-[17px] w-37 bg-slate-700"/>
+              {cardIsHovered && <></>}
+              {quizCard.id !== 0 && (
+                <div className="flex flex-col items-center w-full">
+                  <Image
+                    src={getImageFromApi(quizCard?.id)}
+                    alt={quizCard?.name}
+                    width={170}
+                    height={170}
+                    className="border-2 border-white/50"
+                    onMouseEnter={() => setCardIsHovered(true)}
+                    onMouseLeave={() => setCardIsHovered(false)}
+                  />
+                  <div className="z-50 bg-white clip-diagonal-small p-3 text-slate-900 mt-4 w-full">
+                    <div className="flex mb-1">
+                      {quizCard.attribute ? (
+                        <p className="text-sm text-left font-bold text-[14px]">
+                          [{quizCard.attribute} / {quizCard.race}]
+                        </p>
+                      ) : (
+                        <p className="text-sm text-left font-bold text-[14px]">
+                          [{quizCard.race}]
+                        </p>
+                      )}
+                    </div>
+                    <p className="text-left text-[12px] overflow-auto custom-scrollbar-alt min-h-20 max-h-20">{quizCard.desc}</p>
                   </div>
-                  <p className="text-sm text-left">{quizCard.desc}</p>
                 </div>
               )}
-              {quizCard.id !== 0 && (
-                <Image
-                  src={getImageFromApi(quizCard?.id)}
-                  alt={quizCard?.name}
-                  width={170}
-                  height={170}
-                  className="border-2 border-white/50"
-                  onMouseEnter={() => setCardIsHovered(true)}
-                  onMouseLeave={() => setCardIsHovered(false)}
-                />
-              )}
             </div>
-
             <div className="h-8 flex justify-center items-center">
               {feedback && (
                 <div
