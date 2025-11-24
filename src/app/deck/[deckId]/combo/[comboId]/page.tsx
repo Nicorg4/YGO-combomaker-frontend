@@ -25,8 +25,6 @@ const StepByStepCombo = () => {
     router.push(`/deck/${deckId}`);
   };
 
-  
-
   useEffect(() => {
     const fetchData = async () => {
       try {

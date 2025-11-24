@@ -37,7 +37,7 @@ const MainButton = ({
     <button
       type="button"
       onClick={onClick}
-      className={`${bgColor} flex ${reversed} px-3 p-2 gap-1 clip-diagonal-small items-center ${textColor} font-bold ${hoverColor} transition-all duration-300 cursor-pointer justify-center align-middle max-h-12 min-w-[80px]`}
+      className={`${bgColor} flex ${reversed} px-3 p-2 gap-1 clip-diagonal-small items-center ${textColor} font-bold ${hoverColor} transition-all duration-300 cursor-pointer justify-center align-middle max-h-12 min-w-[80px] min-h-10`}
     >
       {isLoading ? (
         <AiOutlineLoading3Quarters className="animate-spin border-white" />

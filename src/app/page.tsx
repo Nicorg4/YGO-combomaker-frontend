@@ -10,7 +10,9 @@ import { getAllDecks } from "@/features/decks/useDecks";
 import { Deck } from "@/types/types";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import AtemBackground from '../../public/images/atem_background.png'
+import AtemBackground from "../../public/images/atem_background.png";
+import CardQuizPopUp from "@/components/cardQuizPopUp";
+import { TbCards } from "react-icons/tb";
 
 export default function App() {
   const [decks, setDecks] = useState<Deck[]>([]);
@@ -22,12 +24,15 @@ export default function App() {
   const [totalPages, setTotalPages] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [newsPopUpVisible, setNewsPopUpVisible] = useState(false);
+  const [cardQuizPopUpVisible, setCardQuizPopUpVisible] = useState(false);
 
+  // ✔ Nuevo ITEMS_PER_PAGE
   const ITEMS_PER_PAGE = useMemo(() => {
     if (windowWidth >= 768) return 15;
-    if (windowWidth >= 640) return 8;
-    return 4;
+    if (windowWidth >= 640) return 10;
+    return 5;
   }, [windowWidth]);
+
   const router = useRouter();
 
   const goToPage = (id: number) => {
@@ -81,6 +86,10 @@ export default function App() {
     setNewsPopUpVisible((prev) => !prev);
   };
 
+  const toggleCardQuizPopUp = () => {
+    setCardQuizPopUpVisible((prev) => !prev);
+  };
+
   if (isLoading) {
     return <LoadingAnimation />;
   }
@@ -88,15 +97,47 @@ export default function App() {
   return (
     <MainContainer>
       {newsPopUpVisible && (
-        <NewsPopUp toggleShowNewsPopUp={toggleShowNewsPopUp}/>
+        <NewsPopUp toggleShowNewsPopUp={toggleShowNewsPopUp} />
       )}
-      <div className="flex flex-col bg-slate-900 p-10 min-w-full align-middle clip-diagonal gap-3 slide-in-from-top" style={{backgroundImage: `url(${AtemBackground.src})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      {cardQuizPopUpVisible && (
+        <CardQuizPopUp toggleCardQuizPopUp={toggleCardQuizPopUp} />
+      )}
+
+      <div
+        className="flex flex-col bg-slate-900 p-10 min-w-full align-middle clip-diagonal gap-3 slide-in-from-top mt-15 md:mt-5 lg:mt-0"
+        style={{
+          backgroundImage: `url(${AtemBackground.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <h1 className="text-xl md:text-4xl">Yu-Gi-Oh! Combo Maker</h1>
       </div>
-      <div className="fixed top-5 left-5 flex justify-center items-center clip-diagonal-small">
-        <p className="p-2 pl-3 bg-slate-800 pointer-events-none">V1.3.1</p>
-        <button className="p-2 bg-white/70  text-slate-800 font-bold cursor-pointer hover:bg-white/90" onClick={toggleShowNewsPopUp}>What´s new?</button>
+
+      <div className="fixed top-5 left-5 flex items-center clip-diagonal-small overflow-hidden">
+        <span className="px-3 py-2 bg-slate-800 text-white select-none">
+          V1.3.1
+        </span>
+        <button
+          onClick={toggleShowNewsPopUp}
+          className="px-3 py-2 bg-white/70 text-slate-800 font-semibold hover:bg-white/90 transition-colors cursor-pointer"
+        >
+          What`s new?
+        </button>
       </div>
+
+      <div className="fixed lg:top-18 lg:left-5 top-5 left-55 flex items-center clip-diagonal-small overflow-hidden h-10">
+        <span className="px-3 bg-slate-800 h-full flex items-center text-white select-none">
+          <TbCards className="text-xl" />
+        </span>
+        <button
+          onClick={toggleCardQuizPopUp}
+          className="px-3 bg-white/70 h-full flex items-center text-slate-800 font-semibold hover:bg-white/90 transition-colors cursor-pointer"
+        >
+          Card quiz
+        </button>
+      </div>
+
       <MainWrapper>
         <input
           type="text"
@@ -104,6 +145,7 @@ export default function App() {
           className="w-full p-3 pl-7 mb-2 bg-white/80 text-slate-800 clip-diagonal m-auto max-w-[90%]"
           onChange={(e) => setSearchQuery(e.target.value)}
         />
+
         <div className="flex flex-col justify-between items-center flex-1">
           {decks.length === 0 ? (
             <div className="flex flex-col justify-center items-center flex-1">
@@ -127,6 +169,7 @@ export default function App() {
               </div>
             </div>
           )}
+
           {totalPages > 1 && (
             <PaginationController
               currentPage={currentPage - 1}

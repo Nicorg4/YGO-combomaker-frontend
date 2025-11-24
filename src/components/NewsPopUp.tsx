@@ -7,7 +7,7 @@ type Props = {
 const NewsPopUp = ({ toggleShowNewsPopUp }: Props) => {
   return (
     <div className="absolute top-0 left-0 w-full h-full bg-black/80 flex justify-center items-center z-[200]">
-      <div className="bg-slate-800 shadow-xl p-10 max-w-lg w-full relative clip-diagonal">
+      <div className="bg-slate-800 shadow-xl p-10 sm:max-w-lg w-full relative clip-diagonal max-w-[90%]">
         <button
           onClick={toggleShowNewsPopUp}
           className="absolute top-2 right-2 text-slate-700 hover:bg-white/70 text-2xl font-bold cursor-pointer transition-all duration-300 clip-diagonal-small p-1 px-4 pb-2 bg-white/50"
@@ -15,20 +15,34 @@ const NewsPopUp = ({ toggleShowNewsPopUp }: Props) => {
           x
         </button>
         <h1 className="text-2xl font-semibold text-white mb-4">
-          🚀 What’s new in version 1.3.1?
+          🚀 What’s new in version 1.4.0?
         </h1>
 
         <div className="space-y-6 text-sm text-gray-700 max-h-[75vh] overflow-y-auto pr-2">
           <div>
             <h2 className="font-bold text-white mb-1 text-xl">
-              ✨ Quality of Life Improvements
+              🧩 1.4.0 Card quiz & UI Enhancements
+            </h2>
+            <ul className="list-disc list-inside space-y-1 text-white/70">
+              <li>New feature to test your knowledge of Yu-Gi-Oh! cards</li>
+              <li>Improved UI responsiveness and accessibility</li>
+              <li>Minor bug fixes and performance improvements</li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="font-bold text-white mb-1 text-xl">
+              ✨ 1.3.0 Quality of Life Improvements
             </h2>
             <ul className="list-disc list-inside space-y-1 text-white/70">
               <li>New UI details added</li>
-              <li>Master Duel Meta integration to view deck recipes and card info</li>
+              <li>
+                Master Duel Meta integration to view deck recipes and card info
+              </li>
               <li>Added go to end and go to start buttons in combo viewer</li>
               <li>New “🆕” tag highlights decks with newly added combos</li>
-              <li>Sort options for starting hand, and main dangers in Deck Info</li>
+              <li>
+                Sort options for starting hand, and main dangers in Deck Info
+              </li>
             </ul>
           </div>
 
