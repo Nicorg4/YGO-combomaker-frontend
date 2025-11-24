@@ -15,7 +15,7 @@ const NewsPopUp = ({ toggleShowNewsPopUp }: Props) => {
           x
         </button>
         <h1 className="text-2xl font-semibold text-white mb-4">
-          🚀 What’s new in version 1.3.0?
+          🚀 What’s new in version 1.3.1?
         </h1>
 
         <div className="space-y-6 text-sm text-gray-700 max-h-[75vh] overflow-y-auto pr-2">
@@ -24,6 +24,7 @@ const NewsPopUp = ({ toggleShowNewsPopUp }: Props) => {
               ✨ Quality of Life Improvements
             </h2>
             <ul className="list-disc list-inside space-y-1 text-white/70">
+              <li>New UI details added</li>
               <li>Master Duel Meta integration to view deck recipes and card info</li>
               <li>Added go to end and go to start buttons in combo viewer</li>
               <li>New “🆕” tag highlights decks with newly added combos</li>

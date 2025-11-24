@@ -10,6 +10,7 @@ import { getAllDecks } from "@/features/decks/useDecks";
 import { Deck } from "@/types/types";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
+import AtemBackground from '../../public/images/atem_background.png'
 
 export default function App() {
   const [decks, setDecks] = useState<Deck[]>([]);
@@ -89,16 +90,11 @@ export default function App() {
       {newsPopUpVisible && (
         <NewsPopUp toggleShowNewsPopUp={toggleShowNewsPopUp}/>
       )}
-      <div className="flex flex-col bg-slate-900 p-10 min-w-full align-middle clip-diagonal gap-3 slide-in-from-top">
+      <div className="flex flex-col bg-slate-900 p-10 min-w-full align-middle clip-diagonal gap-3 slide-in-from-top" style={{backgroundImage: `url(${AtemBackground.src})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <h1 className="text-xl md:text-4xl">Yu-Gi-Oh! Combo Maker</h1>
-        <p className="text-sm md:text-xl">
-          Select your favourite deck, explore{" "}
-          <strong className="text-slate-500">combos</strong> or create a new
-          one.
-        </p>
       </div>
       <div className="fixed top-5 left-5 flex justify-center items-center clip-diagonal-small">
-        <p className="p-2 pl-3 bg-slate-800 pointer-events-none">V1.3.0</p>
+        <p className="p-2 pl-3 bg-slate-800 pointer-events-none">V1.3.1</p>
         <button className="p-2 bg-white/70  text-slate-800 font-bold cursor-pointer hover:bg-white/90" onClick={toggleShowNewsPopUp}>What´s new?</button>
       </div>
       <MainWrapper>

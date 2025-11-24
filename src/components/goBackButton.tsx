@@ -1,17 +1,25 @@
-import React from 'react'
+import React from "react";
 import { IoIosArrowBack } from "react-icons/io";
-import MainButton from './mainButton';
 
 type Props = {
-    goToPage: () => void
-}
+  goToPage: () => void;
+};
 
-const GoBackButton = (props: Props) => {
-    return (
-        <div className='fixed top-3 left-3 z-500'>
-            <MainButton onClick={props.goToPage} text={"Go back"} type={"confirm"} reverse={true}><IoIosArrowBack className='text-xl'/></MainButton>
+const GoBackButton = ({ goToPage }: Props) => {
+  return (
+    <div className="fixed top-5 left-5 z-500">
+      <button className="clip-diagonal-small h-9 hover:cursor-pointer hover:opacity-80 transition-all duration-300" onClick={goToPage}>
+        <div className="flex w-full h-full items-center">
+          <div className="bg-slate-800 h-full flex items-center px-2">
+            <IoIosArrowBack className="text-xl text-white" />
+          </div>
+          <div className="bg-white/70 h-full flex items-center px-2 font-bold text-slate-800">
+            Go back
+          </div>
         </div>
-    )
-}
+      </button>
+    </div>
+  );
+};
 
-export default GoBackButton
+export default GoBackButton;
