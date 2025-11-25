@@ -45,6 +45,7 @@ const CardQuizPopUp = ({ toggleCardQuizPopUp }: Props) => {
     type: "success" | "error";
     message: string;
   } | null>(null);
+  const [previousCardName, setPreviousCardName] = useState("");
 
   useEffect(() => {
     const savedMax = localStorage.getItem("maxStreak");
@@ -59,7 +60,7 @@ const CardQuizPopUp = ({ toggleCardQuizPopUp }: Props) => {
 
   const showFeedback = (type: "success" | "error", message: string) => {
     setFeedback({ type, message });
-    setTimeout(() => setFeedback(null), 2000);
+    setTimeout(() => setFeedback(null), 1200);
   };
 
   useEffect(() => {
@@ -98,6 +99,7 @@ const CardQuizPopUp = ({ toggleCardQuizPopUp }: Props) => {
 
   const startQuiz = async () => {
     setIsLoading(true);
+    setPreviousCardName(quizCard.name);
     await fetchQuizCard();
     setQuizStarted(true);
     setIsLoading(false);
@@ -105,6 +107,7 @@ const CardQuizPopUp = ({ toggleCardQuizPopUp }: Props) => {
 
   const restartQuiz = async () => {
     setIsLoading(true);
+    setPreviousCardName(quizCard.name);
     await fetchQuizCard();
     setCurrentStreak(0);
     setSelectedCard(null);
@@ -128,6 +131,7 @@ const CardQuizPopUp = ({ toggleCardQuizPopUp }: Props) => {
       }
 
       setSelectedCard(null);
+      setPreviousCardName(quizCard.name);
       fetchQuizCard();
       return;
     }
@@ -137,14 +141,15 @@ const CardQuizPopUp = ({ toggleCardQuizPopUp }: Props) => {
     setGuessesLeft(newGuesses);
 
     if (newGuesses <= 0) {
-      showFeedback("error", "No guesses left! You lost.");
+      showFeedback("error", "❌❌❌");
       setCurrentStreak(0);
       setSelectedCard(null);
+      setPreviousCardName(quizCard.name);
       fetchQuizCard();
       return;
     }
 
-    showFeedback("error", `Wrong! ${newGuesses} guesses left.`);
+    showFeedback("error", "❌".repeat(3 - newGuesses));
     setSelectedCard(null);
   };
 
@@ -188,7 +193,18 @@ const CardQuizPopUp = ({ toggleCardQuizPopUp }: Props) => {
             />
 
             <div className="relative flex w-full justify-center">
-              <div className="absolute top-3 h-[17px] w-37 bg-slate-700"/>
+              <div className="absolute top-3 h-[17px] w-37 bg-slate-700" />
+              {feedback && (
+                <div
+                  className={`text-center font-bold text-lg transition-opacity duration-300 absolute top-20 ${
+                    feedback.type === "success"
+                      ? "text-green-400"
+                      : "text-red-400"
+                  }`}
+                >
+                  <p className="text-[50px]">{feedback.message}</p>
+                </div>
+              )}
               {cardIsHovered && <></>}
               {quizCard.id !== 0 && (
                 <div className="flex flex-col items-center w-full">
@@ -213,23 +229,15 @@ const CardQuizPopUp = ({ toggleCardQuizPopUp }: Props) => {
                         </p>
                       )}
                     </div>
-                    <p className="text-left text-[12px] overflow-auto custom-scrollbar-alt min-h-20 max-h-20">{quizCard.desc}</p>
+                    <p className="text-left text-[12px] overflow-auto custom-scrollbar-alt min-h-20 max-h-20">
+                      {quizCard.desc}
+                    </p>
                   </div>
                 </div>
               )}
             </div>
             <div className="h-8 flex justify-center items-center">
-              {feedback && (
-                <div
-                  className={`text-center font-bold text-lg transition-opacity duration-300 ${
-                    feedback.type === "success"
-                      ? "text-green-400"
-                      : "text-red-400"
-                  }`}
-                >
-                  {feedback.message}
-                </div>
-              )}
+              {previousCardName && <p>Last card was: {previousCardName}</p>}
             </div>
 
             <div className="flex justify-end gap-2">
