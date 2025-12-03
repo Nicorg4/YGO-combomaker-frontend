@@ -114,7 +114,7 @@ const CardSearchInput = ({
       />
 
       {showSuggestions && (
-        <div className="absolute z-10 w-full bg-white border border-gray-300 rounded shadow max-h-60 overflow-auto custom-scrollbar-alt">
+        <div className="absolute z-100 w-full bg-white border border-gray-300 rounded shadow max-h-60 overflow-auto custom-scrollbar-alt">
           {filteredCards.length > 0 ? (
             filteredCards.map((card, index) => (
               <div

@@ -236,7 +236,7 @@ const CardQuizPopUp = ({ toggleCardQuizPopUp }: Props) => {
               {quizCard.id !== 0 && (
                 <div className="flex flex-col items-center w-full">
                   <div
-                    className={`flex flex-col items-center w-full z-1000 transition-transform duration-300 ease-out ${
+                    className={`flex flex-col items-center w-full z-60 transition-transform duration-300 ease-out ${
                       zoomed ? "scale-200" : "scale-100"
                     } `}
                     ref={boxRef}
