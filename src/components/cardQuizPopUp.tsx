@@ -224,7 +224,7 @@ const CardQuizPopUp = ({ toggleCardQuizPopUp }: Props) => {
             <div className="relative flex w-full justify-center">
               {feedback && (
                 <div
-                  className={`text-center font-bold text-lg transition-opacity duration-300 absolute top-20 bg-white clip-diagonal-small px-10 ${
+                  className={`text-center font-bold text-lg transition-opacity duration-300 absolute top-20 bg-white clip-diagonal-small px-10 z-70 ${
                     feedback.type === "success"
                       ? "text-slate-700"
                       : "text-red-400"
