@@ -87,7 +87,7 @@ const EquationCannonsCalculator: React.FC = () => {
       </div>
 
       <div className="flex flex-col w-full mb-3">
-        <p className="text-white">Cartas totales en juego:</p>
+        <p className="text-white">Total in game cards:</p>
         <input
           type="number"
           value={ingameCards}
@@ -97,7 +97,7 @@ const EquationCannonsCalculator: React.FC = () => {
       </div>
 
       <div className="flex flex-col w-full mb-3">
-        <p className="text-white">Nivel objetivo del monstruo:</p>
+        <p className="text-white">Target monster lvl:</p>
         <input
           type="number"
           value={targetLevel}
@@ -105,8 +105,9 @@ const EquationCannonsCalculator: React.FC = () => {
           className="w-full p-2 bg-white text-black clip-diagonal-small"
         />
       </div>
-
-      <MainButton onClick={calculate} text={"Calculate"} type={"main"} />
+      <div className="flex w-full justify-center">
+        <MainButton onClick={calculate} text={"Calculate"} type={"main"} />
+      </div>
       {error ? (
         <div className="w-full bg-white mt-4 p-2 clip-diagonal-small items-center flex justify-center">
           <p className="text-slate-800 font-semibold">{error}</p>
@@ -117,7 +118,7 @@ const EquationCannonsCalculator: React.FC = () => {
           <div className="w-full bg-white mt-4 p-2 clip-diagonal-small items-center flex justify-center">
             <div className="flex items-center gap-3 text-slate-900 font-semibold">
               <div className="flex items-center gap-1">
-                <Image src={xyzImage} alt="XYZ Card" width={30} height={30} />
+                <Image src={xyzImage} alt="XYZ Card" width={20} height={20} />
                 <span className="ml-1 flex gap-1">
                   x2 <Image src={xyzStar} alt={"lvl"} />x{xyzLevel}
                 </span>
@@ -129,8 +130,8 @@ const EquationCannonsCalculator: React.FC = () => {
                 <Image
                   src={fusionImage}
                   alt="Fusion Card"
-                  width={30}
-                  height={30}
+                  width={20}
+                  height={20}
                 />
                 <span className="ml-1 flex gap-1">
                   x1 - <Image src={fusionStar} alt={"lvl"} />x{fusionLevel}
