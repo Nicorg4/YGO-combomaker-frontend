@@ -12,7 +12,10 @@ import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import AtemBackground from "../../public/images/atem_background.png";
 import CardQuizPopUp from "@/components/cardQuizPopUp";
+import ToolsPopUp from "@/components/toolsPopUp";
 import { TbCards } from "react-icons/tb";
+import { LiaToolsSolid } from "react-icons/lia";
+
 
 export default function App() {
   const [decks, setDecks] = useState<Deck[]>([]);
@@ -25,8 +28,8 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [newsPopUpVisible, setNewsPopUpVisible] = useState(false);
   const [cardQuizPopUpVisible, setCardQuizPopUpVisible] = useState(false);
+  const [toggleToolsPopUpVisible, setToggleToolsPopUpVisible] = useState(false);
 
-  // ✔ Nuevo ITEMS_PER_PAGE
   const ITEMS_PER_PAGE = useMemo(() => {
     if (windowWidth >= 768) return 15;
     if (windowWidth >= 640) return 10;
@@ -90,6 +93,10 @@ export default function App() {
     setCardQuizPopUpVisible((prev) => !prev);
   };
 
+  const toggleToolsPopUp = () => {
+    setToggleToolsPopUpVisible((prev) => !prev);
+  };
+
   if (isLoading) {
     return <LoadingAnimation />;
   }
@@ -101,6 +108,9 @@ export default function App() {
       )}
       {cardQuizPopUpVisible && (
         <CardQuizPopUp toggleCardQuizPopUp={toggleCardQuizPopUp} />
+      )}
+      {toggleToolsPopUpVisible && (
+        <ToolsPopUp toggleToolsPopUpVisible={toggleToolsPopUp} />
       )}
 
       <div
@@ -114,28 +124,50 @@ export default function App() {
         <h1 className="text-xl md:text-4xl">Yu-Gi-Oh! Combo Maker</h1>
       </div>
 
-      <div className="fixed top-5 left-5 flex items-center clip-diagonal-small overflow-hidden">
-        <span className="px-3 py-2 bg-slate-800 text-white select-none">
-          V1.4.0
-        </span>
-        <button
-          onClick={toggleShowNewsPopUp}
-          className="px-3 py-2 bg-white/70 text-slate-800 font-semibold hover:bg-white/90 transition-colors cursor-pointer"
-        >
-          What`s new?
-        </button>
-      </div>
-
-      <div className="fixed lg:top-18 lg:left-5 top-5 left-55 flex items-center clip-diagonal-small overflow-hidden h-10">
-        <span className="px-3 bg-slate-800 h-full flex items-center text-white select-none">
-          <TbCards className="text-xl" />
-        </span>
-        <button
-          onClick={toggleCardQuizPopUp}
-          className="px-3 bg-white/70 h-full flex items-center text-slate-800 font-semibold hover:bg-white/90 transition-colors cursor-pointer"
-        >
-          Card quiz
-        </button>
+      <div
+        className="
+          fixed 
+          top-5 
+          left-1/2 -translate-x-1/2 
+          flex flex-row lg:flex-col 
+          items-start 
+          gap-3 
+          lg:top-5 lg:left-5 lg:translate-x-0
+        "
+      >
+        <div className="hidden lg:flex items-center clip-diagonal-small overflow-visible">
+          <span className="px-3 py-2 bg-slate-800 text-white select-none">
+            V1.4.0
+          </span>
+          <button
+            onClick={toggleShowNewsPopUp}
+            className="px-3 py-2 bg-white/70 text-slate-800 font-semibold hover:bg-white/90 transition-colors cursor-pointer"
+          >
+            What`s new?
+          </button>
+        </div>
+        <div className="flex items-center clip-diagonal-small overflow-visible h-10">
+          <span className="px-3 bg-slate-800 h-full flex items-center text-white select-none">
+            <TbCards className="text-xl" />
+          </span>
+          <button
+            onClick={toggleCardQuizPopUp}
+            className="px-3 bg-white/70 h-full flex items-center text-slate-800 font-semibold hover:bg-white/90 transition-colors cursor-pointer"
+          >
+            Card quiz
+          </button>
+        </div>
+        <div className="flex items-center clip-diagonal-small overflow-visible h-10">
+          <span className="px-3 bg-slate-800 h-full flex items-center text-white select-none">
+            <LiaToolsSolid className="text-xl" />
+          </span>
+          <button
+            onClick={toggleToolsPopUp}
+            className="px-3 bg-white/70 h-full flex items-center text-slate-800 font-semibold hover:bg-white/90 transition-colors cursor-pointer"
+          >
+            Tools
+          </button>
+        </div>
       </div>
 
       <MainWrapper>
