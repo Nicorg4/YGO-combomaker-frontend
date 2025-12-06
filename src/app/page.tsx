@@ -137,7 +137,7 @@ export default function App() {
       >
         <div className="hidden lg:flex items-center clip-diagonal-small overflow-visible">
           <span className="px-3 py-2 bg-slate-800 text-white select-none">
-            V1.4.0
+            V1.5.0
           </span>
           <button
             onClick={toggleShowNewsPopUp}
