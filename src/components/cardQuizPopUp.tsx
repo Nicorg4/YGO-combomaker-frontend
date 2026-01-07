@@ -187,7 +187,7 @@ const CardQuizPopUp = ({ toggleCardQuizPopUp }: Props) => {
   };
 
   return (
-    <div className="absolute top-0 left-0 w-full h-full bg-black/80 flex justify-center items-center z-[200]">
+    <div className="absolute top-0 left-0 w-full h-full bg-black/80 flex justify-center items-center z-200">
       <div className="bg-slate-800 shadow-xl p-10 sm:max-w-lg w-full relative clip-diagonal max-w-[90%]">
         <button
           onClick={toggleCardQuizPopUp}

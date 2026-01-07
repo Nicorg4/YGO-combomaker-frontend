@@ -59,7 +59,7 @@ const ComboBox = (props: Props) => {
             {props.combo.tags.map((tag) => (
               <span
                 key={tag.id}
-                className="text-xs bg-slate-700 text-white p-2 text-center pointer-events-none clip-diagonal-small"
+                className={`text-xs ${tag.name == "Deprecated" ? "bg-red-900" : "bg-slate-700"} text-white p-2 text-center pointer-events-none clip-diagonal-small`}
               >
                 {tag.name}
               </span>
