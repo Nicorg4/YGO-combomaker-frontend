@@ -2064,10 +2064,6 @@
     "card_name": "Ape Magician"
   },
   {
-    "card_id": 44886582,
-    "card_name": "Apex Polymerization"
-  },
-  {
     "card_id": 25573115,
     "card_name": "Apex Predation"
   },
@@ -2400,10 +2396,6 @@
     "card_name": "Archfiend Eccentrick"
   },
   {
-    "card_id": 48469380,
-    "card_name": "Archfiend Emperor"
-  },
-  {
     "card_id": 28423537,
     "card_name": "Archfiend Emperor, the First Lord of Horror"
   },
@@ -2432,6 +2424,10 @@
     "card_name": "Archfiend Marmot of Nefariousness"
   },
   {
+    "card_id": 7622360,
+    "card_name": "Archfiend Matador"
+  },
+  {
     "card_id": 15150371,
     "card_name": "Archfiend Mirror"
   },
@@ -2440,20 +2436,8 @@
     "card_name": "Archfiend Palabyrinth"
   },
   {
-    "card_id": 87985506,
-    "card_name": "Archfiend Playtime"
-  },
-  {
     "card_id": 49881766,
     "card_name": "Archfiend Soldier"
-  },
-  {
-    "card_id": 90764871,
-    "card_name": "Archfiend Strategy"
-  },
-  {
-    "card_id": 82997779,
-    "card_name": "Archfiend Usurpation"
   },
   {
     "card_id": 59969392,
@@ -2484,12 +2468,12 @@
     "card_name": "Archfiend's Conscription"
   },
   {
-    "card_id": 13379114,
-    "card_name": "Archfiend's Fervor"
-  },
-  {
     "card_id": 5168381,
     "card_name": "Archfiend's Ghastly Glitch"
+  },
+  {
+    "card_id": 87985506,
+    "card_name": "Archfiend's Jest"
   },
   {
     "card_id": 32775808,
@@ -2510,6 +2494,14 @@
   {
     "card_id": 21438286,
     "card_name": "Archfiend's Staff of Despair"
+  },
+  {
+    "card_id": 90764871,
+    "card_name": "Archfiend's Strategy Game"
+  },
+  {
+    "card_id": 13379114,
+    "card_name": "Archfiend's Vigor"
   },
   {
     "card_id": 59509952,
@@ -2626,10 +2618,6 @@
   {
     "card_id": 53153481,
     "card_name": "Armaill"
-  },
-  {
-    "card_id": 53770666,
-    "card_name": "Armament Reincarnation"
   },
   {
     "card_id": 90374791,
@@ -2940,12 +2928,12 @@
     "card_name": "Arrive in Light"
   },
   {
-    "card_id": 49652661,
-    "card_name": "Arsenal Audit"
-  },
-  {
     "card_id": 42364374,
     "card_name": "Arsenal Bug"
+  },
+  {
+    "card_id": 49652661,
+    "card_name": "Arsenal Organization"
   },
   {
     "card_id": 55348096,
@@ -3048,10 +3036,6 @@
     "card_name": "Artmage Graflare"
   },
   {
-    "card_id": 44654994,
-    "card_name": "Artmage Impasto -Recapture-"
-  },
-  {
     "card_id": 97434754,
     "card_name": "Artmage Litera"
   },
@@ -3065,7 +3049,7 @@
   },
   {
     "card_id": 74631897,
-    "card_name": "Artmage Non-Finito"
+    "card_name": "Artmage Non Finito"
   },
   {
     "card_id": 23599634,
@@ -3218,10 +3202,6 @@
   {
     "card_id": 40012727,
     "card_name": "Assault Slash"
-  },
-  {
-    "card_id": 18711696,
-    "card_name": "Assault Sonic Warrior"
   },
   {
     "card_id": 87043568,
@@ -4220,10 +4200,6 @@
     "card_name": "Bayonet Punisher"
   },
   {
-    "card_id": 43932352,
-    "card_name": "Bayt'al-Hecahands"
-  },
-  {
     "card_id": 79480466,
     "card_name": "Bazoo the Soul Eater Beast"
   },
@@ -4774,10 +4750,6 @@
   {
     "card_id": 41426869,
     "card_name": "Black Illusion Ritual"
-  },
-  {
-    "card_id": 95506252,
-    "card_name": "Black Jack the Shadow-Armored Knight"
   },
   {
     "card_id": 55761792,
@@ -5721,7 +5693,7 @@
   },
   {
     "card_id": 84464389,
-    "card_name": "Borreload Fatalflare Dragon"
+    "card_name": "Borreload Fatal Flare Dragon"
   },
   {
     "card_id": 92892239,
@@ -5938,10 +5910,6 @@
   {
     "card_id": 66740005,
     "card_name": "Bravo, Fighter Fur Hire"
-  },
-  {
-    "card_id": 90011273,
-    "card_name": "Breachborrel Dragon"
   },
   {
     "card_id": 9852718,
@@ -7228,10 +7196,6 @@
     "card_name": "Chamberlain of the Six Samurai"
   },
   {
-    "card_id": 46001505,
-    "card_name": "Champion's Pulse"
-  },
-  {
     "card_id": 82382815,
     "card_name": "Champion's Vigilance"
   },
@@ -7452,10 +7416,6 @@
     "card_name": "Charm of Shabti"
   },
   {
-    "card_id": 48016074,
-    "card_name": "Charmers of the Grand Circle"
-  },
-  {
     "card_id": 64753157,
     "card_name": "Charming Resort Staff"
   },
@@ -7506,10 +7466,6 @@
   {
     "card_id": 525110,
     "card_name": "Cherry Inmato"
-  },
-  {
-    "card_id": 64626565,
-    "card_name": "Cherubidamn Irisfiel"
   },
   {
     "card_id": 58699500,
@@ -7646,10 +7602,6 @@
   {
     "card_id": 54878729,
     "card_name": "Chronicle Sorceress"
-  },
-  {
-    "card_id": 4026187,
-    "card_name": "Chronicler of Fairy Tail Tales"
   },
   {
     "card_id": 25397880,
@@ -8052,46 +8004,6 @@
     "card_name": "Cloudy Skies of Grey"
   },
   {
-    "card_id": 83232904,
-    "card_name": "Clown Clan \"Malabarism\""
-  },
-  {
-    "card_id": 57847269,
-    "card_name": "Clown Clan \"Matinee\""
-  },
-  {
-    "card_id": 6547248,
-    "card_name": "Clown Clan \"New Face\""
-  },
-  {
-    "card_id": 20448151,
-    "card_name": "Clown Clan \"Rehearsal\""
-  },
-  {
-    "card_id": 70058649,
-    "card_name": "Clown Clan \"Soiree\""
-  },
-  {
-    "card_id": 91237821,
-    "card_name": "Clown Clan Devils"
-  },
-  {
-    "card_id": 31533473,
-    "card_name": "Clown Clan Diablo"
-  },
-  {
-    "card_id": 42759961,
-    "card_name": "Clown Clan Flair"
-  },
-  {
-    "card_id": 93172951,
-    "card_name": "Clown Clan Meteor"
-  },
-  {
-    "card_id": 82159583,
-    "card_name": "Clown Clan Whiteface"
-  },
-  {
     "card_id": 92667214,
     "card_name": "Clown Zombie"
   },
@@ -8364,12 +8276,12 @@
     "card_name": "Condolence Puppet"
   },
   {
-    "card_id": 44839512,
-    "card_name": "Conduction Warrior Linear Magnum Plus Minus"
+    "card_id": 47247792,
+    "card_name": "Conduction Knight Plasma Magnum"
   },
   {
-    "card_id": 47247792,
-    "card_name": "Conduction Warrior Plasma Magnum"
+    "card_id": 44839512,
+    "card_name": "Conduction Warrior Linear Magnum ±"
   },
   {
     "card_id": 8454126,
@@ -8594,10 +8506,6 @@
   {
     "card_id": 82639107,
     "card_name": "Convert Contact"
-  },
-  {
-    "card_id": 43471513,
-    "card_name": "Convex Knight"
   },
   {
     "card_id": 62966332,
@@ -8880,20 +8788,12 @@
     "card_name": "Crevice Into the Different Dimension"
   },
   {
-    "card_id": 3294539,
-    "card_name": "Crimson Blade Dragon"
-  },
-  {
     "card_id": 80321197,
     "card_name": "Crimson Blader"
   },
   {
     "card_id": 50604072,
     "card_name": "Crimson Blader/Assault Mode"
-  },
-  {
-    "card_id": 99398682,
-    "card_name": "Crimson Call"
   },
   {
     "card_id": 63436931,
@@ -9266,10 +9166,6 @@
   {
     "card_id": 50588353,
     "card_name": "Crystron Halqifibrax"
-  },
-  {
-    "card_id": 65400671,
-    "card_name": "Crystron Halqifibrax Prism"
   },
   {
     "card_id": 99274184,
@@ -10332,10 +10228,6 @@
     "card_name": "D/D/D Abyss King Gilgamesh"
   },
   {
-    "card_id": 11852093,
-    "card_name": "D/D/D Alfred the Divine Sage King"
-  },
-  {
     "card_id": 83303851,
     "card_name": "D/D/D Chaos King Apocalypse"
   },
@@ -10414,6 +10306,10 @@
   {
     "card_id": 92536468,
     "card_name": "D/D/D Rebel King Leonidas"
+  },
+  {
+    "card_id": 11852093,
+    "card_name": "D/D/D Sage King Alfred"
   },
   {
     "card_id": 30998403,
@@ -11292,6 +11188,10 @@
     "card_name": "Dark Spirit's Mastery"
   },
   {
+    "card_id": 46708514,
+    "card_name": "Dark Staring at the Blue Sky"
+  },
+  {
     "card_id": 32646477,
     "card_name": "Dark Strike Fighter"
   },
@@ -11461,7 +11361,7 @@
   },
   {
     "card_id": 84031359,
-    "card_name": "Darklord Gulgolet"
+    "card_name": "Darklord Gulgalta"
   },
   {
     "card_id": 52840267,
@@ -11526,10 +11426,6 @@
   {
     "card_id": 60417395,
     "card_name": "Darkness Neosphere"
-  },
-  {
-    "card_id": 83445539,
-    "card_name": "Darkness Resonator"
   },
   {
     "card_id": 76925842,
@@ -11902,10 +11798,6 @@
   {
     "card_id": 37798171,
     "card_name": "Depth Shark"
-  },
-  {
-    "card_id": 46708514,
-    "card_name": "Derk, Longing for the Blue Skies"
   },
   {
     "card_id": 39131963,
@@ -12378,10 +12270,6 @@
   {
     "card_id": 51644030,
     "card_name": "Diabound Kernel"
-  },
-  {
-    "card_id": 6083904,
-    "card_name": "Diabrocken of the Ghost Light"
   },
   {
     "card_id": 81994591,
@@ -13160,6 +13048,10 @@
     "card_name": "Dogmatika Ashiyan"
   },
   {
+    "card_id": 30394645,
+    "card_name": "Dogmatika Chaplain"
+  },
+  {
     "card_id": 60303688,
     "card_name": "Dogmatika Ecclesia, the Virtuous"
   },
@@ -13178,10 +13070,6 @@
   {
     "card_id": 56588755,
     "card_name": "Dogmatika Genesis"
-  },
-  {
-    "card_id": 30394645,
-    "card_name": "Dogmatika Lawbringer"
   },
   {
     "card_id": 95679145,
@@ -13296,10 +13184,6 @@
     "card_name": "Dominus Purge"
   },
   {
-    "card_id": 6325660,
-    "card_name": "Dominus Spark"
-  },
-  {
     "card_id": 42091632,
     "card_name": "Dominus Spiral"
   },
@@ -13352,12 +13236,12 @@
     "card_name": "Doom Dozer"
   },
   {
-    "card_id": 69436288,
-    "card_name": "Doom Kraken"
+    "card_id": 48469380,
+    "card_name": "Doom Emperor Archfiend"
   },
   {
-    "card_id": 78744660,
-    "card_name": "Doom Regina Archfiend"
+    "card_id": 69436288,
+    "card_name": "Doom Kraken"
   },
   {
     "card_id": 94944637,
@@ -13373,11 +13257,7 @@
   },
   {
     "card_id": 38007649,
-    "card_name": "DoomZ Change"
-  },
-  {
-    "card_id": 84054556,
-    "card_name": "DoomZ Command \"A.D.R.A.S.T.E.I.A.\""
+    "card_name": "DoomZ Changer"
   },
   {
     "card_id": 68831625,
@@ -13406,10 +13286,6 @@
   {
     "card_id": 92472273,
     "card_name": "DoomZ XII Zero - Drastea"
-  },
-  {
-    "card_id": 65848113,
-    "card_name": "DoomZ XIII Over - Graflario"
   },
   {
     "card_id": 83116692,
@@ -13576,10 +13452,6 @@
     "card_name": "Double Hooking"
   },
   {
-    "card_id": 38129297,
-    "card_name": "Double Interlock"
-  },
-  {
     "card_id": 49684352,
     "card_name": "Double Iris Magician"
   },
@@ -13622,6 +13494,10 @@
   {
     "card_id": 51976476,
     "card_name": "Double Trap Hole"
+  },
+  {
+    "card_id": 38129297,
+    "card_name": "Double Trigger"
   },
   {
     "card_id": 67724434,
@@ -13749,7 +13625,7 @@
   },
   {
     "card_id": 42125140,
-    "card_name": "Dracotail Shaulas"
+    "card_name": "Dracotail Shaurus"
   },
   {
     "card_id": 80208225,
@@ -14268,10 +14144,6 @@
     "card_name": "Dramaturge of Despia"
   },
   {
-    "card_id": 79966218,
-    "card_name": "Draselea the Blood Tree Dragon Princess"
-  },
-  {
     "card_id": 70366448,
     "card_name": "Drastic Draw"
   },
@@ -14760,10 +14632,6 @@
     "card_name": "Eanoc, Sentry of the Ghoti"
   },
   {
-    "card_id": 58995660,
-    "card_name": "Early Palm Gets the Win"
-  },
-  {
     "card_id": 22812068,
     "card_name": "Earth Armor Ninja"
   },
@@ -14912,10 +14780,6 @@
     "card_name": "Eatgaboon"
   },
   {
-    "card_id": 94384774,
-    "card_name": "Ebisu Shinsen Matsuri"
-  },
-  {
     "card_id": 88341502,
     "card_name": "Ebon Arrow"
   },
@@ -14941,7 +14805,7 @@
   },
   {
     "card_id": 78397661,
-    "card_name": "Ecclesia and the Dark Dragon"
+    "card_name": "Ecclesia of the Black Dragon"
   },
   {
     "card_id": 38798785,
@@ -15612,46 +15476,6 @@
     "card_name": "Elf's Light"
   },
   {
-    "card_id": 85976588,
-    "card_name": "Elfnote Fortuna"
-  },
-  {
-    "card_id": 13597785,
-    "card_name": "Elfnote Lucina"
-  },
-  {
-    "card_id": 12375297,
-    "card_name": "Elfnote Power Patron"
-  },
-  {
-    "card_id": 56651978,
-    "card_name": "Elfnote Regina"
-  },
-  {
-    "card_id": 42302563,
-    "card_name": "Elfnote Seraphim Strelitzia"
-  },
-  {
-    "card_id": 59581480,
-    "card_name": "Elfnote Tinia"
-  },
-  {
-    "card_id": 90880453,
-    "card_name": "Elfnotes: A Plea for Help"
-  },
-  {
-    "card_id": 50590801,
-    "card_name": "Elfnotes: Aristeia of Trust"
-  },
-  {
-    "card_id": 24092792,
-    "card_name": "Elfnotes: Rhapsodia of Madness"
-  },
-  {
-    "card_id": 64491754,
-    "card_name": "Elfnotes: Welcome Home"
-  },
-  {
     "card_id": 73872164,
     "card_name": "Eliminating the League"
   },
@@ -15660,12 +15484,44 @@
     "card_name": "Elphase"
   },
   {
-    "card_id": 101304014,
-    "card_name": "Elvennotes Regina"
+    "card_id": 59581480,
+    "card_name": "Elvennotes Dyina"
+  },
+  {
+    "card_id": 85976588,
+    "card_name": "Elvennotes Fortona"
+  },
+  {
+    "card_id": 13597785,
+    "card_name": "Elvennotes Lucina"
+  },
+  {
+    "card_id": 12375297,
+    "card_name": "Elvennotes Power Patron"
+  },
+  {
+    "card_id": 42302563,
+    "card_name": "Elvennotes Seraphim Stlitzia"
+  },
+  {
+    "card_id": 64491754,
+    "card_name": "Elvennotes ~Homecoming Parallelism~"
+  },
+  {
+    "card_id": 24092792,
+    "card_name": "Elvennotes ~Maddening Rhapsodia~"
   },
   {
     "card_id": 101303071,
     "card_name": "Elvennotes ~Oracle Alicetea~"
+  },
+  {
+    "card_id": 50590801,
+    "card_name": "Elvennotes ~Oracle Aristeia~"
+  },
+  {
+    "card_id": 90880453,
+    "card_name": "Elvennotes ~Reunion Tercet~"
   },
   {
     "card_id": 61980241,
@@ -15840,14 +15696,6 @@
     "card_name": "End of the World"
   },
   {
-    "card_id": 3739500,
-    "card_name": "End of the World Ruler"
-  },
-  {
-    "card_id": 35989913,
-    "card_name": "Endless Bond"
-  },
-  {
     "card_id": 7845138,
     "card_name": "Endless Decay"
   },
@@ -15858,10 +15706,6 @@
   {
     "card_id": 300302007,
     "card_name": "Endless Traps"
-  },
-  {
-    "card_id": 34041788,
-    "card_name": "Endymion Empire"
   },
   {
     "card_id": 65342096,
@@ -15956,20 +15800,12 @@
     "card_name": "Enneacraft - Asta.PIXEA"
   },
   {
-    "card_id": 71801447,
-    "card_name": "Enneacraft - Atil.SPIA"
-  },
-  {
     "card_id": 54842941,
     "card_name": "Enneacraft - Atori.MAR"
   },
   {
     "card_id": 54020393,
     "card_name": "Enneacraft Release"
-  },
-  {
-    "card_id": 19504025,
-    "card_name": "Enneacraft Reset"
   },
   {
     "card_id": 80015408,
@@ -16584,10 +16420,6 @@
     "card_name": "Exceed the Pendulum"
   },
   {
-    "card_id": 52782439,
-    "card_name": "Exceptional Schedule"
-  },
-  {
     "card_id": 5556668,
     "card_name": "Exchange"
   },
@@ -16653,7 +16485,7 @@
   },
   {
     "card_id": 52335937,
-    "card_name": "Exosister Betrayal"
+    "card_name": "Exosister Bat Mater"
   },
   {
     "card_id": 30802207,
@@ -17056,10 +16888,6 @@
     "card_name": "Fairy Tail - Luna"
   },
   {
-    "card_id": 19144622,
-    "card_name": "Fairy Tail - Matchlille"
-  },
-  {
     "card_id": 52022648,
     "card_name": "Fairy Tail - Rella"
   },
@@ -17074,18 +16902,6 @@
   {
     "card_id": 55623480,
     "card_name": "Fairy Tail - Snow"
-  },
-  {
-    "card_id": 27632520,
-    "card_name": "Fairy Tail - Wickat"
-  },
-  {
-    "card_id": 56725612,
-    "card_name": "Fairy Tail Ball"
-  },
-  {
-    "card_id": 19326613,
-    "card_name": "Fairy Tail Long Long Ago"
   },
   {
     "card_id": 91957038,
@@ -17152,10 +16968,6 @@
     "card_name": "Falchion Beta"
   },
   {
-    "card_id": 93023136,
-    "card_name": "Fallen Angel in Darkness"
-  },
-  {
     "card_id": 49674183,
     "card_name": "Fallen Angel of Roses"
   },
@@ -17186,10 +16998,6 @@
   {
     "card_id": 73819701,
     "card_name": "Fallen of the White Dragon"
-  },
-  {
-    "card_id": 59011257,
-    "card_name": "Fallin' Cheatah"
   },
   {
     "card_id": 26099457,
@@ -17228,12 +17036,8 @@
     "card_name": "Familiar-Possessed - Wynn"
   },
   {
-    "card_id": 45538320,
-    "card_name": "Familiars of the Spiritual Arts"
-  },
-  {
     "card_id": 26162470,
-    "card_name": "Fandora, the Flying Fighting Furtress"
+    "card_name": "Fandora, the Fearsome Flying Furtress"
   },
   {
     "card_id": 64400161,
@@ -17364,10 +17168,6 @@
     "card_name": "Fiber Jar"
   },
   {
-    "card_id": 70088809,
-    "card_name": "Fidraulis Harmonia"
-  },
-  {
     "card_id": 7153114,
     "card_name": "Field Barrier"
   },
@@ -17386,10 +17186,6 @@
   {
     "card_id": 77456781,
     "card_name": "Fiend Kraken"
-  },
-  {
-    "card_id": 56838842,
-    "card_name": "Fiend Piece Golem"
   },
   {
     "card_id": 68870276,
@@ -17924,10 +17720,6 @@
     "card_name": "Fissure"
   },
   {
-    "card_id": 49181828,
-    "card_name": "Fist Armed Dragon"
-  },
-  {
     "card_id": 79868386,
     "card_name": "Fist of Fate"
   },
@@ -18376,10 +18168,6 @@
     "card_name": "Fluffal Wings"
   },
   {
-    "card_id": 21861412,
-    "card_name": "Flux Ochsenfeld"
-  },
-  {
     "card_id": 11954712,
     "card_name": "Flyfang"
   },
@@ -18736,10 +18524,6 @@
     "card_name": "Foucault's Cannon"
   },
   {
-    "card_id": 27519978,
-    "card_name": "Four Charmers in Profusion"
-  },
-  {
     "card_id": 88753985,
     "card_name": "Fox Fire"
   },
@@ -19004,10 +18788,6 @@
     "card_name": "Fungi of the Musk"
   },
   {
-    "card_id": 59374259,
-    "card_name": "Furtive Techniques Fur Hire, Fur All Your Ultimate Moves"
-  },
-  {
     "card_id": 92345028,
     "card_name": "Fury of Fire"
   },
@@ -19180,30 +18960,6 @@
     "card_name": "G.B. Hunter"
   },
   {
-    "card_id": 56311997,
-    "card_name": "GMX - ALLOS"
-  },
-  {
-    "card_id": 82706696,
-    "card_name": "GMX - VELOX"
-  },
-  {
-    "card_id": 18795635,
-    "card_name": "GMX Applied Experiment #55"
-  },
-  {
-    "card_id": 83528184,
-    "card_name": "GMX Associate Noma"
-  },
-  {
-    "card_id": 56034579,
-    "card_name": "GMX Chairman Kimridge"
-  },
-  {
-    "card_id": 20049870,
-    "card_name": "GMX Researcher Selande"
-  },
-  {
     "card_id": 37955049,
     "card_name": "Gaap the Divine Soldier"
   },
@@ -19268,10 +19024,6 @@
     "card_name": "Gagaga Cowboy"
   },
   {
-    "card_id": 9591819,
-    "card_name": "Gagaga Escape"
-  },
-  {
     "card_id": 9491461,
     "card_name": "Gagaga Ganbara Knight"
   },
@@ -19286,10 +19038,6 @@
   {
     "card_id": 67120578,
     "card_name": "Gagaga Head"
-  },
-  {
-    "card_id": 73496100,
-    "card_name": "Gagaga Illusion"
   },
   {
     "card_id": 26082117,
@@ -19566,10 +19314,6 @@
   {
     "card_id": 62968263,
     "card_name": "Galaxy-Eyes Afterglow Dragon"
-  },
-  {
-    "card_id": 92517928,
-    "card_name": "Galaxy-Eyes Antimatter Dragon"
   },
   {
     "card_id": 2530830,
@@ -20322,10 +20066,6 @@
   {
     "card_id": 49370026,
     "card_name": "Genin"
-  },
-  {
-    "card_id": 7656689,
-    "card_name": "Genni, the Maid of Endymion"
   },
   {
     "card_id": 42155488,
@@ -22693,7 +22433,7 @@
   },
   {
     "card_id": 4079728,
-    "card_name": "Gung-Ho! Springans!"
+    "card_name": "Gung-ho! Springans!"
   },
   {
     "card_id": 65749035,
@@ -22814,10 +22554,6 @@
   {
     "card_id": 74825788,
     "card_name": "H - Heated Heart"
-  },
-  {
-    "card_id": 18482473,
-    "card_name": "H-E-R-O Flash!"
   },
   {
     "card_id": 300302049,
@@ -23240,10 +22976,6 @@
     "card_name": "Heavy Interlock"
   },
   {
-    "card_id": 45116390,
-    "card_name": "Heavy Knight Babel Decker"
-  },
-  {
     "card_id": 34761062,
     "card_name": "Heavy Knight of the Flame"
   },
@@ -23300,10 +23032,6 @@
     "card_name": "Hecahands Breus"
   },
   {
-    "card_id": 31411835,
-    "card_name": "Hecahands Dandalos"
-  },
-  {
     "card_id": 95132593,
     "card_name": "Hecahands Gaigas"
   },
@@ -23318,10 +23046,6 @@
   {
     "card_id": 67021206,
     "card_name": "Hecahands Jauzah"
-  },
-  {
-    "card_id": 18321034,
-    "card_name": "Hecahands Makibel"
   },
   {
     "card_id": 57809669,
@@ -24812,10 +24536,6 @@
     "card_name": "Infernal Punisher"
   },
   {
-    "card_id": 66122213,
-    "card_name": "Infernal Strike Fighter"
-  },
-  {
     "card_id": 8581705,
     "card_name": "Infernalqueen Archfiend"
   },
@@ -25644,10 +25364,6 @@
     "card_name": "Jackpot 7"
   },
   {
-    "card_id": 69191257,
-    "card_name": "Jade Dragon Mech"
-  },
-  {
     "card_id": 95214051,
     "card_name": "Jade Insect Whistle"
   },
@@ -25904,10 +25620,6 @@
     "card_name": "Junk Archer"
   },
   {
-    "card_id": 91215724,
-    "card_name": "Junk Armor"
-  },
-  {
     "card_id": 79068663,
     "card_name": "Junk Barrage"
   },
@@ -25972,20 +25684,12 @@
     "card_name": "Junk Mail"
   },
   {
-    "card_id": 73218792,
-    "card_name": "Junk Meister"
-  },
-  {
     "card_id": 67968069,
     "card_name": "Junk Puppet"
   },
   {
     "card_id": 78922939,
     "card_name": "Junk Servant"
-  },
-  {
-    "card_id": 26387390,
-    "card_name": "Junk Signal"
   },
   {
     "card_id": 56294501,
@@ -26612,16 +26316,8 @@
     "card_name": "Keurse, the Ogdoadic Light"
   },
   {
-    "card_id": 65961304,
-    "card_name": "Kewl Tune Back 2 Back"
-  },
-  {
     "card_id": 43904702,
     "card_name": "Kewl Tune Clip"
-  },
-  {
-    "card_id": 39576656,
-    "card_name": "Kewl Tune Crackle"
   },
   {
     "card_id": 16387555,
@@ -26650,10 +26346,6 @@
   {
     "card_id": 88170262,
     "card_name": "Kewl Tune Remix"
-  },
-  {
-    "card_id": 17209452,
-    "card_name": "Kewl Tune Rotary"
   },
   {
     "card_id": 78058681,
@@ -27400,10 +27092,6 @@
     "card_name": "Laevateinn the Burning Blade"
   },
   {
-    "card_id": 53904087,
-    "card_name": "Lahamu the Messenger of Sacred Scripture"
-  },
-  {
     "card_id": 81128478,
     "card_name": "Lair Wire"
   },
@@ -27678,10 +27366,6 @@
   {
     "card_id": 50599453,
     "card_name": "Leafplace Plaice"
-  },
-  {
-    "card_id": 32126000,
-    "card_name": "Learning Elf"
   },
   {
     "card_id": 7127502,
@@ -29408,10 +29092,6 @@
     "card_name": "Magical Musket - Steady Hands"
   },
   {
-    "card_id": 3287359,
-    "card_name": "Magical Musket Mastermind Caspar"
-  },
-  {
     "card_id": 30907810,
     "card_name": "Magical Musket Mastermind Zakiel"
   },
@@ -29728,16 +29408,16 @@
     "card_name": "Magnet Reverse"
   },
   {
-    "card_id": 86289475,
-    "card_name": "Magnet Warrior Omega Plus"
+    "card_id": 51826619,
+    "card_name": "Magnet Warrior Σ＋"
   },
   {
     "card_id": 87814728,
-    "card_name": "Magnet Warrior Sigma Minus"
+    "card_name": "Magnet Warrior Σ－"
   },
   {
-    "card_id": 51826619,
-    "card_name": "Magnet Warrior Sigma Plus"
+    "card_id": 86289475,
+    "card_name": "Magnet Warrior Ω+"
   },
   {
     "card_id": 300302014,
@@ -30552,10 +30232,6 @@
     "card_name": "Masked HERO Dusk Crow"
   },
   {
-    "card_id": 66206748,
-    "card_name": "Masked HERO Fountain"
-  },
-  {
     "card_id": 58288218,
     "card_name": "Masked HERO Furnace"
   },
@@ -30670,10 +30346,6 @@
   {
     "card_id": 35606858,
     "card_name": "Masterking Archfiend"
-  },
-  {
-    "card_id": 7622360,
-    "card_name": "Matador Archfiend"
   },
   {
     "card_id": 22609617,
@@ -30950,10 +30622,6 @@
   {
     "card_id": 22512237,
     "card_name": "Mechanical Hound"
-  },
-  {
-    "card_id": 22106558,
-    "card_name": "Mechanical Mechanic"
   },
   {
     "card_id": 34442949,
@@ -31418,10 +31086,6 @@
   {
     "card_id": 34926568,
     "card_name": "Merciless Scorpion of Serket"
-  },
-  {
-    "card_id": 101303084,
-    "card_name": "Mercurium the Living Quicksilver"
   },
   {
     "card_id": 9940036,
@@ -32004,10 +31668,6 @@
     "card_name": "Mimighoul Fairy"
   },
   {
-    "card_id": 82933935,
-    "card_name": "Mimighoul Flower"
-  },
-  {
     "card_id": 19338434,
     "card_name": "Mimighoul Fork"
   },
@@ -32188,10 +31848,6 @@
     "card_name": "Miracle Dig"
   },
   {
-    "card_id": 30875635,
-    "card_name": "Miracle Ejector"
-  },
-  {
     "card_id": 44887817,
     "card_name": "Miracle Fertilizer"
   },
@@ -32280,10 +31936,6 @@
     "card_name": "Mirage of Nightmare"
   },
   {
-    "card_id": 95915457,
-    "card_name": "Mirror Barrier"
-  },
-  {
     "card_id": 44095762,
     "card_name": "Mirror Force"
   },
@@ -32354,10 +32006,6 @@
   {
     "card_id": 92182447,
     "card_name": "Mischief of the Time Goddess"
-  },
-  {
-    "card_id": 95589901,
-    "card_name": "Mischief of the Wolves"
   },
   {
     "card_id": 29795530,
@@ -32962,10 +32610,6 @@
   {
     "card_id": 4931562,
     "card_name": "Mountain Warrior"
-  },
-  {
-    "card_id": 5208118,
-    "card_name": "Moving Point Pendulum"
   },
   {
     "card_id": 3395226,
@@ -34104,6 +33748,10 @@
     "card_name": "Night Sword Serpent"
   },
   {
+    "card_id": 79519259,
+    "card_name": "Night Wing Priestess"
+  },
+  {
     "card_id": 49826746,
     "card_name": "Night Wing Sorceress"
   },
@@ -34129,7 +33777,7 @@
   },
   {
     "card_id": 25224340,
-    "card_name": "Nightmare Hands"
+    "card_name": "Nightmare Hand"
   },
   {
     "card_id": 59290628,
@@ -34168,16 +33816,8 @@
     "card_name": "Nightmare's Steelcage"
   },
   {
-    "card_id": 30138615,
-    "card_name": "Nightmare-Eyes Restrict"
-  },
-  {
     "card_id": 66569334,
     "card_name": "Nightmell the Dark Bonder"
-  },
-  {
-    "card_id": 79519259,
-    "card_name": "Nightwinged Cleric"
   },
   {
     "card_id": 24701235,
@@ -34436,10 +34076,6 @@
     "card_name": "Nobleman-Eater Bug"
   },
   {
-    "card_id": 81101309,
-    "card_name": "Noctilucent Train Bleu Traveler"
-  },
-  {
     "card_id": 70333910,
     "card_name": "Noctovision Dragon"
   },
@@ -34540,10 +34176,6 @@
     "card_name": "Noritoshi in Darkest Rainment"
   },
   {
-    "card_id": 79936051,
-    "card_name": "Northern Cross Fire"
-  },
-  {
     "card_id": 61944066,
     "card_name": "Nouvelles Recipe Book \"Recettes de Nouvellez\""
   },
@@ -34566,10 +34198,6 @@
   {
     "card_id": 51616747,
     "card_name": "Nubian Guard"
-  },
-  {
-    "card_id": 51669847,
-    "card_name": "Null Power Patron Realm - Vidria"
   },
   {
     "card_id": 57314798,
@@ -35692,10 +35320,6 @@
     "card_name": "One for One"
   },
   {
-    "card_id": 71275181,
-    "card_name": "One of Two"
-  },
-  {
     "card_id": 74202664,
     "card_name": "One or Eight"
   },
@@ -36016,10 +35640,6 @@
     "card_name": "Over Limit"
   },
   {
-    "card_id": 613496,
-    "card_name": "Over Tuning"
-  },
-  {
     "card_id": 15627227,
     "card_name": "Overburst Dragon"
   },
@@ -36230,10 +35850,6 @@
   {
     "card_id": 57902193,
     "card_name": "Painful Return"
-  },
-  {
-    "card_id": 21501961,
-    "card_name": "Pair Bear Scare!!"
   },
   {
     "card_id": 16114248,
@@ -36638,10 +36254,6 @@
   {
     "card_id": 18210764,
     "card_name": "Pendulumucho"
-  },
-  {
-    "card_id": 8778267,
-    "card_name": "Penetration Fusion"
   },
   {
     "card_id": 91397409,
@@ -37808,10 +37420,6 @@
     "card_name": "Poisonous Snake Token"
   },
   {
-    "card_id": 561300,
-    "card_name": "Poisonous Viper"
-  },
-  {
     "card_id": 95561280,
     "card_name": "Poisonous Winds"
   },
@@ -37878,10 +37486,6 @@
   {
     "card_id": 65046521,
     "card_name": "Possessed Partnerships"
-  },
-  {
-    "card_id": 45508030,
-    "card_name": "Possessed Resonance"
   },
   {
     "card_id": 64014615,
@@ -37988,18 +37592,6 @@
     "card_name": "Power Patron DoomZ"
   },
   {
-    "card_id": 17473466,
-    "card_name": "Power Patron Shadow Beast Nervedo"
-  },
-  {
-    "card_id": 43871165,
-    "card_name": "Power Patron Shadow Machine Zegredo"
-  },
-  {
-    "card_id": 10266279,
-    "card_name": "Power Patron Shadow Spirit Junordo"
-  },
-  {
     "card_id": 90246973,
     "card_name": "Power Pickaxe"
   },
@@ -38030,10 +37622,6 @@
   {
     "card_id": 300302021,
     "card_name": "Power Up!"
-  },
-  {
-    "card_id": 19434243,
-    "card_name": "Power Vice Dragon"
   },
   {
     "card_id": 76403456,
@@ -38184,10 +37772,6 @@
     "card_name": "Predaplant Ambulomelides"
   },
   {
-    "card_id": 66787942,
-    "card_name": "Predaplant Baalthea"
-  },
-  {
     "card_id": 22138839,
     "card_name": "Predaplant Banksiogre"
   },
@@ -38230,14 +37814,6 @@
   {
     "card_id": 5259518,
     "card_name": "Predaplant Heliamphorhynchus"
-  },
-  {
-    "card_id": 18595008,
-    "card_name": "Predaplant Lilizard"
-  },
-  {
-    "card_id": 44994712,
-    "card_name": "Predaplant Longinephila"
   },
   {
     "card_id": 22011689,
@@ -38294,10 +37870,6 @@
   {
     "card_id": 8148322,
     "card_name": "Predaprime Fusion"
-  },
-  {
-    "card_id": 89176044,
-    "card_name": "Predaprimitive"
   },
   {
     "card_id": 14463695,
@@ -39356,12 +38928,12 @@
     "card_name": "Radiant Spirit"
   },
   {
-    "card_id": 25940932,
-    "card_name": "Radiant Typhoon Ascendance"
-  },
-  {
     "card_id": 67115133,
     "card_name": "Radiant Typhoon Chant"
+  },
+  {
+    "card_id": 25940932,
+    "card_name": "Radiant Typhoon Elation"
   },
   {
     "card_id": 54143349,
@@ -39393,7 +38965,7 @@
   },
   {
     "card_id": 39341885,
-    "card_name": "Radiant Typhoon Varuroon, the Marine Eidolon"
+    "card_name": "Radiant Typhoon Varuroon, the Sea Spirit"
   },
   {
     "card_id": 53927851,
@@ -39734,10 +39306,6 @@
   {
     "card_id": 45653036,
     "card_name": "Rain Storm"
-  },
-  {
-    "card_id": 94467314,
-    "card_name": "Rain of Frogs"
   },
   {
     "card_id": 66719324,
@@ -40240,10 +39808,6 @@
     "card_name": "Red Hared Hasty Horse"
   },
   {
-    "card_id": 30698243,
-    "card_name": "Red Hypernova Dragon"
-  },
-  {
     "card_id": 19299793,
     "card_name": "Red Lotus King, Flame Crime"
   },
@@ -40262,10 +39826,6 @@
   {
     "card_id": 97489701,
     "card_name": "Red Nova Dragon"
-  },
-  {
-    "card_id": 82323997,
-    "card_name": "Red Nova Dragon/Assault Mode"
   },
   {
     "card_id": 68722455,
@@ -40554,14 +40114,6 @@
   {
     "card_id": 61480937,
     "card_name": "Regulus the Fairy Beast"
-  },
-  {
-    "card_id": 60439482,
-    "card_name": "Regulus' Arrow"
-  },
-  {
-    "card_id": 96228804,
-    "card_name": "Regulus, the Prince of Endymion"
   },
   {
     "card_id": 41406613,
@@ -40976,10 +40528,6 @@
     "card_name": "Return of the Zombies"
   },
   {
-    "card_id": 29927283,
-    "card_name": "Returned Dino Daneen"
-  },
-  {
     "card_id": 24892828,
     "card_name": "Returned of the Tistina"
   },
@@ -41101,7 +40649,7 @@
   },
   {
     "card_id": 47647354,
-    "card_name": "Rex, Ride Fur Hire"
+    "card_name": "Rex, Gale Fur Hire"
   },
   {
     "card_id": 62403074,
@@ -41213,7 +40761,7 @@
   },
   {
     "card_id": 51612489,
-    "card_name": "Riot's Reason"
+    "card_name": "Riot"
   },
   {
     "card_id": 56410769,
@@ -43172,6 +42720,10 @@
     "card_name": "Secret Stash Slipshod Squirrel"
   },
   {
+    "card_id": 59374259,
+    "card_name": "Secret Technique Fur Hire"
+  },
+  {
     "card_id": 68462976,
     "card_name": "Secret Village of the Spellcasters"
   },
@@ -43628,6 +43180,10 @@
     "card_name": "Shattered Axe"
   },
   {
+    "card_id": 12197223,
+    "card_name": "Sheena the Twin Storm Deities of Divine Thunder"
+  },
+  {
     "card_id": 73915052,
     "card_name": "Sheep Token"
   },
@@ -43649,7 +43205,7 @@
   },
   {
     "card_id": 11035075,
-    "card_name": "Shichi-Go-San"
+    "card_name": "Shichigosan Shugo"
   },
   {
     "card_id": 52097679,
@@ -43730,10 +43286,6 @@
   {
     "card_id": 59237154,
     "card_name": "Shifting Shadows"
-  },
-  {
-    "card_id": 12197223,
-    "card_name": "Shiina, Twin Tempests of Celestial Thunder"
   },
   {
     "card_id": 60365591,
@@ -43854,10 +43406,6 @@
   {
     "card_id": 4148264,
     "card_name": "Shiny Black \"C\" Squadder"
-  },
-  {
-    "card_id": 57256127,
-    "card_name": "Shipping Archfiend"
   },
   {
     "card_id": 58761791,
@@ -44624,10 +44172,6 @@
     "card_name": "Sky Striker Maneuver - Vector Blast"
   },
   {
-    "card_id": 61151074,
-    "card_name": "Sky Striker Mecha - Adhilsaber"
-  },
-  {
     "card_id": 25733157,
     "card_name": "Sky Striker Mecha - Eagle Booster"
   },
@@ -44954,10 +44498,6 @@
   {
     "card_id": 41420027,
     "card_name": "Solemn Judgment"
-  },
-  {
-    "card_id": 78114463,
-    "card_name": "Solemn Report"
   },
   {
     "card_id": 92512625,
@@ -45682,10 +45222,6 @@
   {
     "card_id": 88616795,
     "card_name": "Spellbook of Wisdom"
-  },
-  {
-    "card_id": 11911336,
-    "card_name": "Spellbook of the Grand Circle"
   },
   {
     "card_id": 56981417,
@@ -46476,10 +46012,6 @@
     "card_name": "Starving Venom Predapower Fusion Dragon"
   },
   {
-    "card_id": 5148778,
-    "card_name": "Starving Venom Wing Dragon"
-  },
-  {
     "card_id": 23626223,
     "card_name": "Statue of Anguish Pattern"
   },
@@ -46494,10 +46026,6 @@
   {
     "card_id": 49964567,
     "card_name": "Staysailor Romarin"
-  },
-  {
-    "card_id": 64413994,
-    "card_name": "Stealth Angecradle"
   },
   {
     "card_id": 3510565,
@@ -46740,12 +46268,12 @@
     "card_name": "Storm Dragon's Return"
   },
   {
-    "card_id": 39188539,
-    "card_name": "Storm Shooter"
+    "card_id": 53557529,
+    "card_name": "Storm Fur Hire"
   },
   {
-    "card_id": 94641726,
-    "card_name": "Storm-Bane Dragon Destorbim"
+    "card_id": 39188539,
+    "card_name": "Storm Shooter"
   },
   {
     "card_id": 5650082,
@@ -46874,10 +46402,6 @@
   {
     "card_id": 5014629,
     "card_name": "Submersible Carrier Aero Shark"
-  },
-  {
-    "card_id": 89693655,
-    "card_name": "Subspace Battle"
   },
   {
     "card_id": 20663556,
@@ -47014,10 +46538,6 @@
   {
     "card_id": 89493368,
     "card_name": "Summon Reactor SK"
-  },
-  {
-    "card_id": 42719764,
-    "card_name": "Summon Shock"
   },
   {
     "card_id": 61665245,
@@ -47384,16 +46904,8 @@
     "card_name": "Superdimensional Robot Galaxy Destroyer"
   },
   {
-    "card_id": 38354018,
-    "card_name": "Superdreadnought Rail Cannon Flying Launcher"
-  },
-  {
     "card_id": 56910167,
     "card_name": "Superdreadnought Rail Cannon Gustav Max"
-  },
-  {
-    "card_id": 92359409,
-    "card_name": "Superdreadnought Rail Cannon Gustav Rocket"
   },
   {
     "card_id": 26096328,
@@ -47718,10 +47230,6 @@
   {
     "card_id": 70491413,
     "card_name": "Surprise Chain"
-  },
-  {
-    "card_id": 35167375,
-    "card_name": "Surprise Fusion"
   },
   {
     "card_id": 58419204,
@@ -48472,10 +47980,6 @@
     "card_name": "Talaya, Princess of Cherry Blossoms"
   },
   {
-    "card_id": 82119326,
-    "card_name": "Tales of Fairy Tail"
-  },
-  {
     "card_id": 99289828,
     "card_name": "Tales of the White Forest"
   },
@@ -48689,7 +48193,7 @@
   },
   {
     "card_id": 24431911,
-    "card_name": "Tellusion the Magna Warrior"
+    "card_name": "Tellusrion the Magna Warrior"
   },
   {
     "card_id": 87608852,
@@ -49130,10 +48634,6 @@
   {
     "card_id": 97093037,
     "card_name": "The Creator Incarnate"
-  },
-  {
-    "card_id": 67809530,
-    "card_name": "The Crimson King"
   },
   {
     "card_id": 48386462,
@@ -49672,10 +49172,6 @@
     "card_name": "The Roids are Alright"
   },
   {
-    "card_id": 17269895,
-    "card_name": "The Ruler's Rumbling"
-  },
-  {
     "card_id": 26684111,
     "card_name": "The Sacred Waters in the Sky"
   },
@@ -50068,10 +49564,6 @@
     "card_name": "Thor, Lord of the Aesir"
   },
   {
-    "card_id": 72374522,
-    "card_name": "Thorn Fangs of Violet Poison"
-  },
-  {
     "card_id": 65079854,
     "card_name": "Thorn of Malice"
   },
@@ -50110,6 +49602,10 @@
   {
     "card_id": 300204003,
     "card_name": "Thousand-Eyes Spell"
+  },
+  {
+    "card_id": 49181828,
+    "card_name": "Threat Armed Dragon"
   },
   {
     "card_id": 36361633,
@@ -50157,7 +49653,7 @@
   },
   {
     "card_id": 63679166,
-    "card_name": "Throne of the Archfiends"
+    "card_name": "Throne of Archfiends"
   },
   {
     "card_id": 76075810,
@@ -50545,7 +50041,7 @@
   },
   {
     "card_id": 85640370,
-    "card_name": "Tip of the Tinying Tongue"
+    "card_name": "Tip of the Tongue Reduction"
   },
   {
     "card_id": 31386180,
@@ -50998,10 +50494,6 @@
   {
     "card_id": 66094973,
     "card_name": "Transforming Sphere"
-  },
-  {
-    "card_id": 44694191,
-    "card_name": "Transient Masquerader of Illusion"
   },
   {
     "card_id": 66100045,
@@ -51622,10 +51114,6 @@
   {
     "card_id": 96163807,
     "card_name": "Tristan, Knight of the Underworld"
-  },
-  {
-    "card_id": 44716748,
-    "card_name": "Trito Enneacraft - \"exapatisIA\""
   },
   {
     "card_id": 7436169,
@@ -52548,10 +52036,6 @@
     "card_name": "Unleash Your Power!"
   },
   {
-    "card_id": 25661743,
-    "card_name": "Unleashed Power Patron Portal - Terminus"
-  },
-  {
     "card_id": 300302073,
     "card_name": "Unlocking the Power"
   },
@@ -53372,10 +52856,6 @@
     "card_name": "Verre Magic - Lacrima of Light"
   },
   {
-    "card_id": 22623509,
-    "card_name": "Verre, the Maid of Endymion"
-  },
-  {
     "card_id": 50259460,
     "card_name": "Versago the Destroyer"
   },
@@ -53434,10 +52914,6 @@
   {
     "card_id": 300302075,
     "card_name": "Victory of the Shadow Riders"
-  },
-  {
-    "card_id": 70488851,
-    "card_name": "Vidrium the Power Patron of Chaos Extermination"
   },
   {
     "card_id": 15610297,
@@ -53642,10 +53118,6 @@
   {
     "card_id": 7608148,
     "card_name": "Vivid Tail"
-  },
-  {
-    "card_id": 68378605,
-    "card_name": "Vodnika the Fountain Spirit"
   },
   {
     "card_id": 41773061,
@@ -53961,11 +53433,7 @@
   },
   {
     "card_id": 85586937,
-    "card_name": "WAKE CUP! Earl"
-  },
-  {
-    "card_id": 6361316,
-    "card_name": "WAKE CUP! Kuro"
+    "card_name": "WAKE CUP! Erl"
   },
   {
     "card_id": 71410542,
@@ -54384,10 +53852,6 @@
     "card_name": "Weathering Soldier"
   },
   {
-    "card_id": 78021082,
-    "card_name": "Weaver of Fairy Tail Tales"
-  },
-  {
     "card_id": 63017368,
     "card_name": "Wedju Temple"
   },
@@ -54450,10 +53914,6 @@
   {
     "card_id": 91996584,
     "card_name": "Whiptail Crow"
-  },
-  {
-    "card_id": 53557529,
-    "card_name": "Whirlwind Fur Hire"
   },
   {
     "card_id": 15090429,
@@ -54710,10 +54170,6 @@
   {
     "card_id": 98506199,
     "card_name": "Wind Pegasus @Ignister"
-  },
-  {
-    "card_id": 39016067,
-    "card_name": "Wind Unicorn Parallel, the Dracoslayer"
   },
   {
     "card_id": 77334267,
@@ -56224,10 +55680,6 @@
     "card_name": "Zalamander Catalyzer"
   },
   {
-    "card_id": 4891376,
-    "card_name": "Zalen the Shackled Dragon"
-  },
-  {
     "card_id": 30090452,
     "card_name": "Zanki"
   },
@@ -56250,6 +55702,10 @@
   {
     "card_id": 64230128,
     "card_name": "Zaralaam the Dark Palace"
+  },
+  {
+    "card_id": 4891376,
+    "card_name": "Zaren the Chainbound Dragon"
   },
   {
     "card_id": 10598400,
